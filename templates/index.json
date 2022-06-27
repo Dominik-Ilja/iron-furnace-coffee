@@ -185,10 +185,30 @@
         "name_font_bold": true,
         "price_font_bold": false
       }
+    },
+    "1656371504387448a8": {
+      "type": "apps",
+      "disabled": true,
+      "blocks": {
+        "8d703c00-7aa3-415f-b121-8a53d3b1081b": {
+          "type": "shopify:\/\/apps\/xo-gallery\/blocks\/xo-gallery\/e61dfbaa-1a75-4e4e-bffc-324f17325251",
+          "settings": {
+            "type": "gallery",
+            "id": 1
+          }
+        }
+      },
+      "block_order": [
+        "8d703c00-7aa3-415f-b121-8a53d3b1081b"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "165637056753e6faef",
-    "16563706434dbbb576"
+    "16563706434dbbb576",
+    "1656371504387448a8"
   ]
 }
