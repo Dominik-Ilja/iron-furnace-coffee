@@ -163,17 +163,19 @@
         "420809d1-b9eb-4120-918a-63d035a96c98": {
           "type": "menu_item",
           "settings": {
+            "image": "shopify:\/\/shop_images\/latte_1_5f574acf-cb53-4035-9632-73c08e5c93a0.png",
             "name": "Latte",
-            "price": "",
-            "text": ""
+            "price": "$ 3.65",
+            "text": "Caffè latte, often shortened to just latte in English, is a coffee drink of Italian origin made with espresso and steamed milk."
           }
         },
         "5206b40c-9c33-4ae0-b909-c1e61c834f9a": {
           "type": "menu_item",
           "settings": {
-            "name": "",
-            "price": "",
-            "text": ""
+            "image": "shopify:\/\/shop_images\/vienna-coffee_1_69ae49cb-226e-408d-8076-b5fedce99972.png",
+            "name": "Vienna",
+            "price": "$ 7.99",
+            "text": "This drink is very similar to a cappuccino, hence the confusion between the two. The best definition of the drink is perhaps provided by Julius Meinl, the famous Viennese coffee company; “one espresso shot served in a large coffee cup topped with steamed milk and milk foam.”"
           }
         }
       },
