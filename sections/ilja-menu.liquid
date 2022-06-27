@@ -1,0 +1,274 @@
+{%style%}
+
+.menu-title {
+  text-align: center;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-item {
+  display: flex;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.menu-box {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.menu-image {
+  min-height: 70px;
+  min-width: 70px;
+  height: 70px;
+  width: 70px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: none;
+}
+
+.menu-image img {
+  border-radius: 50%;
+  min-height: 60px;
+  min-width: 60px;
+  height: 60px;
+  width: 60px;
+}
+
+.menu-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 2rem;
+  row-gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu-name {
+  margin: 0;
+  font-size: {{section.settings.name_font_size}}rem;
+  {%if section.settings.name_font_bold == true%}
+  font-weight: 600;
+  {%endif%}
+}
+.menu-line {
+  height: 1px;
+  background-color: #d0d0d0;
+  width: 100%;
+  grid-column: 1 / -1;
+}
+.menu-price {
+  font-size: {{section.settings.price_font_size}}rem;
+  
+  {%if section.settings.price_font_bold == true%}
+  font-weight: 600;
+  {%endif%}
+
+  font-family: "Questrial", sans-serif;
+  grid-row: 1;
+  grid-column: 2;
+}
+.menu-text {
+  margin: 0;
+  max-width: 300px;
+
+  line-height: {{section.settings.text_line_height}}; 
+}
+
+@media only screen and (min-width: 336px) {
+  .menu-item {
+  }
+
+  .menu-header {
+    grid-template-columns: auto 1fr auto;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  /* reset original grid placement of items */
+  .menu-line,
+  .menu-price {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .menu-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .menu-image {
+    margin-right: 2rem;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 900px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .menu-details {
+    max-width: 450px;
+  }
+}
+
+{%endstyle%}
+
+{%if section.settings.title != blank%}
+<h1 class="menu-title">{{section.settings.title}}</h1>
+{%endif%}
+
+<div class="menu-grid">
+  
+  {%for block in section.blocks%}
+    <div class="menu-item">
+      <div class="menu-box">
+        {%if block.settings.image != blank%}
+        <!-- Left Half of Item -->
+        <div class="menu-image">
+          <img src="{{block.settings.image | img_url: "100x100"}}" alt="menu item">
+        </div>
+        {%endif%}
+        <!-- Right Half -->
+        <div class="menu-details">
+          <!-- Header -->
+          <header class="menu-header">
+            <!-- Name -->
+            {% if block.settings.name !=blank %}
+              <h4 class="menu-name">{{block.settings.name}}</h4>
+            {% endif %}
+            <!-- Line -->
+            <span class="menu-line"></span>
+            <!-- Price -->
+            {% if block.settings.price != blank %}
+              <div class="menu-price">{{block.settings.price}}</div>
+            {% endif %}
+          </header>
+          <!-- Description -->
+          {% if block.settings.text != blank %}
+          <p class="menu-text">
+            {{block.settings.text}}
+          </p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {%endfor%}
+  
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Menu (Ilja)",
+  "tag": "section",
+  "class": "menu section page-width",
+  "presets": [
+    {
+      "name": "Shop Menu (Ilja)"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "label": "Section Title",
+      "id": "title"
+    },
+    {
+      "type": "range",
+      "id": "name_font_size",
+      "min": 1,
+      "max": 3,
+      "step": 0.1,
+      "unit": "rem",
+      "label": "Menu Item Name Font size",
+      "default": 1.5
+    },
+    {
+      "type": "range",
+      "id": "price_font_size",
+      "min": 0.6,
+      "max": 3,
+      "step": 0.1,
+      "unit": "rem",
+      "label": "Menu Item Price Font size",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "text_line_height",
+      "min": 0.5,
+      "max": 3,
+      "step": 0.1,
+      "label": "Text Line Height",
+      "default": 1
+    },
+	{
+	  "type": "checkbox",
+	  "id": "name_font_bold",
+	  "label": "Bold Menu Item Name?",
+	  "default": true
+	},
+	{
+	  "type": "checkbox",
+	  "id": "price_font_bold",
+	  "label": "Bold Price?",
+	  "default": true
+	}
+  ],
+  "blocks": [
+    {
+      "type": "menu_item",
+      "name": "Menu Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Image for Menu Item",
+          "id": "image"
+        },
+        {
+          "type": "text",
+          "label": "Menu Item Name",
+          "id": "name"
+        },
+        {
+          "type": "text",
+          "label": "Menu Item Price",
+          "id": "price"
+        },
+        {
+          "type": "textarea",
+          "label": "Menu Item Description",
+          "id": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,176 @@
+<!--
+<link rel="stylesheet" href="{{ 'section-hours.css' | asset_url }}" media="print" onload="this.media='all'">  
+-->
+
+{%- style -%}
+
+  .hours {
+    /*padding: 3.6rem 1.5rem;*/
+  }
+
+  .hours-title {
+    text-align: center;
+    position: relative;
+    margin-top: 0;
+  }
+  .hours-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: {{section.settings.detail_max_width}}rem;
+    margin-right: auto;
+    margin-left: auto;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .hours-day {
+    {%if section.settings.bold_days == true%}
+    font-weight: 600;
+    {%endif%}
+    font-size: {{section.settings.day_font_size}}rem;
+
+  }
+  .hours-line {
+    background-color: #D0D0D0;
+    max-width: 80px;
+    width: 100%;
+    height: 1px;
+  }
+  .hours-time {
+    {%if section.settings.bold_hours == true%}
+    font-weight: 600;
+    {%endif%}
+
+    font-size: {{section.settings.hours_font_size}}rem;
+    margin-bottom: 2rem;
+  }
+
+  @media only screen and (min-width: 500px) {
+    .hours-details {
+      text-align: left;
+      grid-template-columns: auto minmax(0px, 1fr) auto;
+      justify-items: auto;
+      column-gap: 4rem;
+      row-gap: 2rem;
+    }
+    .hours-line{
+      max-width: none;
+    }
+    .hours-time {
+    margin-bottom: 0;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .hours-details {
+      column-gap: 4rem;
+    }
+  }
+
+{%- endstyle -%}
+
+
+{%- comment -%}Hours Block{%- endcomment -%}
+  <h1 class="hours-title">{{section.settings.title}}</h1>
+
+  {%- comment -%}Hour Block{%- endcomment -%}
+  <div class="hours-details">
+    {%for block in section.blocks%}
+      <!-- Day -->
+      <span class="hours-day">{{block.settings.day}}</span>
+      <!-- Line -->
+      <span class="hours-line"></span>
+      <!-- Hours -->
+      <span class="hours-time">{{block.settings.hours}}</span>
+    {%endfor%}
+  </div>
+
+{% schema %}
+{
+  "name": "Hours (Ilja)",
+  "tag": "section",
+  "class": "hours section page-width",
+  "limit": 1,
+  "max_blocks": 8,
+  "locales": {},
+  "presets": [
+    {
+      "name": "Hours (Ilja)"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "label": "Title",
+      "id": "title",
+      "default": "Hours",
+      "info": "Main section title"
+    },
+    {
+      "type": "checkbox",
+      "label": "Bold Days?",
+      "id": "bold_days",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "label": "Bold Hours?",
+      "id": "bold_hours",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "day_font_size",
+      "min": 0.6,
+      "max": 3,
+      "step": 0.1,
+      "unit": "rem",
+      "label": "Day Font Size",
+      "default": 1.6
+    },
+    {
+        "type": "range",
+        "id": "hours_font_size",
+        "min": 0.6,
+        "max": 3,
+        "step": 0.1,
+        "unit": "rem",
+        "label": "Hours Font Size",
+        "default": 1.6
+      },
+      {
+        "type": "range",
+        "id": "detail_max_width",
+        "min": 30,
+        "max": 100,
+        "step": 1,
+        "unit": "rem",
+        "label": "Max Width of Hour Details",
+        "default": 60
+      }
+  ],
+  "blocks": [
+    {
+      "name": "Hour Details",
+      "type": "hour_details",
+      "limit": 7,
+      "settings": [
+        {
+          "id": "day",
+          "label": "Day(s)",
+          "type": "text"
+        },
+        {
+          "id": "hours",
+          "label": "Hours",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}
