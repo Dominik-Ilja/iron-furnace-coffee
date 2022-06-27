@@ -87,13 +87,115 @@
     },
     "16563706434dbbb576": {
       "type": "ilja-menu",
+      "blocks": {
+        "3d8fbdc6-ae7d-415b-b1e7-d47428f006ec": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/qishr_1_4084bb96-b190-4fda-9e08-30a09c65ad3b.png",
+            "name": "Qishr",
+            "price": "$ 9.50",
+            "text": "Qishr is a traditional Yemeni hot drink. It is customarily made with spiced coffee husks, ginger, and sometimes other spices like cinnamon."
+          }
+        },
+        "0e6d59c1-008a-4a5c-9b56-c7182b726573": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/affogato_1.png",
+            "name": "Affogato",
+            "price": "$ 6.50",
+            "text": "An affogatois an Italian coffee-based dessert. It usually takes the form of a scoop of plain milk-flavored or vanilla gelato or ice cream topped or \"drowned\" with a shot of hot espresso."
+          }
+        },
+        "9fbeb4c0-2008-4c48-b005-10c730b99053": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cappuccino_1_d30cf92c-ae40-46b5-b01c-b37330b284b8.png",
+            "name": "Cappuccino",
+            "price": "$ 4.99",
+            "text": "A cappuccino is an espresso-based coffee drink that originated in Austria with later development taking place in Italy, and is prepared with steamed milk foam."
+          }
+        },
+        "2a5100f0-db0d-440d-bf2f-9208043c38d8": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cold-brew-coffee_1_fdc60a9e-a828-4578-91b2-5e922a551a35.png",
+            "name": "Cold Brew",
+            "price": "$ 5.50",
+            "text": "Cold Brew coffee, by definition, is simply the process of steeping coffee grounds in room temperature or cold water for an extended period of time."
+          }
+        },
+        "3d3a7040-a86b-469c-9893-f2f4b3c32d33": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/espresso_1_a87eab16-2ff3-45d9-a5bd-16c367ce9458.png",
+            "name": "Espresso",
+            "price": "$ 4.99",
+            "text": "Espresso is a coffee-brewing method of Italian origin, in which a small amount of nearly boiling water is forced under 9–10 bars of pressure through finely-ground coffee beans"
+          }
+        },
+        "e003254c-d6af-43fd-909a-9bd0408073ea": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/long-black-coffee_1_86cf6fb5-a790-444f-bc1e-3bba4889b557.png",
+            "name": "Long Black",
+            "price": "$ 5.99",
+            "text": "A long black is a style of coffee commonly found in Australia and New Zealand. It is similar to an Americano, but with a stronger aroma and taste. A long black is made by pouring a double-shot of espresso or ristretto over hot water."
+          }
+        },
+        "50390954-3173-494e-84af-4ca9e0110006": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/iced-coffee_1_cf8e0ba6-ddbb-4b54-ac52-7b5673744d91.png",
+            "name": "Iced Coffee",
+            "price": "$ 2.65",
+            "text": "Iced coffee is a coffee beverage served cold. It may be prepared either by brewing coffee normally and then serving it over ice or in cold milk, or by brewing the coffee cold."
+          }
+        },
+        "00294c4f-e0dc-4e91-a3c3-4ecb13b455cb": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lungo_1_fe2fdeb9-c09a-44a3-868f-7510ee77cde9.png",
+            "name": "Lungo",
+            "price": "$ 3.99",
+            "text": "Lungo is a coffee beverage made by using an espresso machine to make an Italian-style coffee – short black with more water, resulting in a larger coffee, a lungo"
+          }
+        },
+        "420809d1-b9eb-4120-918a-63d035a96c98": {
+          "type": "menu_item",
+          "settings": {
+            "name": "Latte",
+            "price": "",
+            "text": ""
+          }
+        },
+        "5206b40c-9c33-4ae0-b909-c1e61c834f9a": {
+          "type": "menu_item",
+          "settings": {
+            "name": "",
+            "price": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "3d8fbdc6-ae7d-415b-b1e7-d47428f006ec",
+        "0e6d59c1-008a-4a5c-9b56-c7182b726573",
+        "9fbeb4c0-2008-4c48-b005-10c730b99053",
+        "2a5100f0-db0d-440d-bf2f-9208043c38d8",
+        "3d3a7040-a86b-469c-9893-f2f4b3c32d33",
+        "e003254c-d6af-43fd-909a-9bd0408073ea",
+        "50390954-3173-494e-84af-4ca9e0110006",
+        "00294c4f-e0dc-4e91-a3c3-4ecb13b455cb",
+        "420809d1-b9eb-4120-918a-63d035a96c98",
+        "5206b40c-9c33-4ae0-b909-c1e61c834f9a"
+      ],
       "settings": {
-        "title": "",
-        "name_font_size": 1.5,
-        "price_font_size": 1,
+        "title": "Menu",
+        "name_font_size": 1.8,
+        "price_font_size": 1.4,
         "text_line_height": 1,
         "name_font_bold": true,
-        "price_font_bold": true
+        "price_font_bold": false
       }
     }
   },
