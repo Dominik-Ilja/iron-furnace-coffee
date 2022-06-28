@@ -8,6 +8,11 @@
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
+    {% comment %} CUSTOMIZATION START {% endcomment %}
+    {{ 'ilja-utilities.css' | asset_url | stylesheet_tag }}
+    {{ 'ilja-components.css' | asset_url | stylesheet_tag }}
+    {% comment %} CUSTOMIZATION END {% endcomment %}
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
@@ -229,7 +234,10 @@
       {{ content_for_layout }}
     </main>
 
-    {% section 'footer' %}
+    {% comment %} CUSTOMIZATION START {% endcomment %}
+    {% section 'ilja-footer' %}
+    {% comment %} {% section 'footer' %} {% endcomment %}
+    {% comment %} CUSTOMIZATION END {% endcomment %}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>

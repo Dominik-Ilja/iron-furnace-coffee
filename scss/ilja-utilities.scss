@@ -1,0 +1,28 @@
+/* 
+   * Flex Utilities* 
+*/
+
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+/* 
+   * List Utilities *
+*/
+
+.list-unstyled {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 
+   * Text Utilities *
+*/
+
+.text-decoration-none {
+  text-decoration: none !important;
+}

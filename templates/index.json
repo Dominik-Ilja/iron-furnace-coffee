@@ -1,211 +1,268 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "165637056753e6faef": {
+      "type": "ilja-hours",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "d25003bd-e423-4ca7-bc23-5bfd6e616d94": {
+          "type": "hour_details",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "day": "Monday",
+            "hours": "7:00am - 1:00pm"
           }
         },
-        "text": {
-          "type": "text",
+        "8896da16-cd70-4c4e-8afa-f39d349793f1": {
+          "type": "hour_details",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "day": "Tuesday",
+            "hours": "7:00am - 1:00pm"
           }
         },
-        "button": {
-          "type": "buttons",
+        "759d2024-e176-4f43-806e-3efb826140f3": {
+          "type": "hour_details",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "day": "Wednesday",
+            "hours": "7:00am - 1:00pm"
+          }
+        },
+        "8898efd8-b2f9-49c6-a5fa-4aa23eceb974": {
+          "type": "hour_details",
+          "settings": {
+            "day": "Thursday",
+            "hours": "7:00am - 5:00pm"
+          }
+        },
+        "9eae0788-6896-4000-a9ba-d16b1387ec44": {
+          "type": "hour_details",
+          "settings": {
+            "day": "Friday",
+            "hours": "7:00am - 5:00pm"
+          }
+        },
+        "7c65fbaa-ded1-40f6-89d9-d43d7dc70c8d": {
+          "type": "hour_details",
+          "settings": {
+            "day": "Saturday",
+            "hours": "7:00am - 5:00pm"
+          }
+        },
+        "27471287-7f02-4792-939c-226865f62f9d": {
+          "type": "hour_details",
+          "settings": {
+            "day": "Sunday",
+            "hours": "Closed"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "d25003bd-e423-4ca7-bc23-5bfd6e616d94",
+        "8896da16-cd70-4c4e-8afa-f39d349793f1",
+        "759d2024-e176-4f43-806e-3efb826140f3",
+        "8898efd8-b2f9-49c6-a5fa-4aa23eceb974",
+        "9eae0788-6896-4000-a9ba-d16b1387ec44",
+        "7c65fbaa-ded1-40f6-89d9-d43d7dc70c8d",
+        "27471287-7f02-4792-939c-226865f62f9d"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "adapt_height_first_image": false,
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "title": "Hours",
+        "bold_days": true,
+        "bold_hours": true,
+        "day_font_size": 1.6,
+        "hours_font_size": 1.6,
+        "detail_max_width": 60
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "16563706434dbbb576": {
+      "type": "ilja-menu",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "3d8fbdc6-ae7d-415b-b1e7-d47428f006ec": {
+          "type": "menu_item",
           "settings": {
-            "heading": "<p>Talk about your brand</p>",
-            "heading_size": "h1"
+            "image": "shopify:\/\/shop_images\/qishr_1_4084bb96-b190-4fda-9e08-30a09c65ad3b.png",
+            "name": "Qishr",
+            "price": "$ 9.50",
+            "text": "Qishr is a traditional Yemeni hot drink. It is customarily made with spiced coffee husks, ginger, and sometimes other spices like cinnamon."
           }
         },
-        "text": {
-          "type": "text",
+        "0e6d59c1-008a-4a5c-9b56-c7182b726573": {
+          "type": "menu_item",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "image": "shopify:\/\/shop_images\/affogato_1.png",
+            "name": "Affogato",
+            "price": "$ 6.50",
+            "text": "An affogatois an Italian coffee-based dessert. It usually takes the form of a scoop of plain milk-flavored or vanilla gelato or ice cream topped or \"drowned\" with a shot of hot espresso."
+          }
+        },
+        "9fbeb4c0-2008-4c48-b005-10c730b99053": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cappuccino_1_d30cf92c-ae40-46b5-b01c-b37330b284b8.png",
+            "name": "Cappuccino",
+            "price": "$ 4.99",
+            "text": "A cappuccino is an espresso-based coffee drink that originated in Austria with later development taking place in Italy, and is prepared with steamed milk foam."
+          }
+        },
+        "2a5100f0-db0d-440d-bf2f-9208043c38d8": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/cold-brew-coffee_1_fdc60a9e-a828-4578-91b2-5e922a551a35.png",
+            "name": "Cold Brew",
+            "price": "$ 5.50",
+            "text": "Cold Brew coffee, by definition, is simply the process of steeping coffee grounds in room temperature or cold water for an extended period of time."
+          }
+        },
+        "3d3a7040-a86b-469c-9893-f2f4b3c32d33": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/espresso_1_a87eab16-2ff3-45d9-a5bd-16c367ce9458.png",
+            "name": "Espresso",
+            "price": "$ 4.99",
+            "text": "Espresso is a coffee-brewing method of Italian origin, in which a small amount of nearly boiling water is forced under 9–10 bars of pressure through finely-ground coffee beans"
+          }
+        },
+        "e003254c-d6af-43fd-909a-9bd0408073ea": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/long-black-coffee_1_86cf6fb5-a790-444f-bc1e-3bba4889b557.png",
+            "name": "Long Black",
+            "price": "$ 5.99",
+            "text": "A long black is a style of coffee commonly found in Australia and New Zealand. It is similar to an Americano, but with a stronger aroma and taste. A long black is made by pouring a double-shot of espresso or ristretto over hot water."
+          }
+        },
+        "50390954-3173-494e-84af-4ca9e0110006": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/iced-coffee_1_cf8e0ba6-ddbb-4b54-ac52-7b5673744d91.png",
+            "name": "Iced Coffee",
+            "price": "$ 2.65",
+            "text": "Iced coffee is a coffee beverage served cold. It may be prepared either by brewing coffee normally and then serving it over ice or in cold milk, or by brewing the coffee cold."
+          }
+        },
+        "00294c4f-e0dc-4e91-a3c3-4ecb13b455cb": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lungo_1_fe2fdeb9-c09a-44a3-868f-7510ee77cde9.png",
+            "name": "Lungo",
+            "price": "$ 3.99",
+            "text": "Lungo is a coffee beverage made by using an espresso machine to make an Italian-style coffee – short black with more water, resulting in a larger coffee, a lungo"
+          }
+        },
+        "420809d1-b9eb-4120-918a-63d035a96c98": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/latte_1_5f574acf-cb53-4035-9632-73c08e5c93a0.png",
+            "name": "Latte",
+            "price": "$ 3.65",
+            "text": "Caffè latte, often shortened to just latte in English, is a coffee drink of Italian origin made with espresso and steamed milk."
+          }
+        },
+        "5206b40c-9c33-4ae0-b909-c1e61c834f9a": {
+          "type": "menu_item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/vienna-coffee_1_69ae49cb-226e-408d-8076-b5fedce99972.png",
+            "name": "Vienna",
+            "price": "$ 7.99",
+            "text": "This drink is very similar to a cappuccino, hence the confusion between the two. The best definition of the drink is perhaps provided by Julius Meinl, the famous Viennese coffee company; “one espresso shot served in a large coffee cup topped with steamed milk and milk foam.”"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "3d8fbdc6-ae7d-415b-b1e7-d47428f006ec",
+        "0e6d59c1-008a-4a5c-9b56-c7182b726573",
+        "9fbeb4c0-2008-4c48-b005-10c730b99053",
+        "2a5100f0-db0d-440d-bf2f-9208043c38d8",
+        "3d3a7040-a86b-469c-9893-f2f4b3c32d33",
+        "e003254c-d6af-43fd-909a-9bd0408073ea",
+        "50390954-3173-494e-84af-4ca9e0110006",
+        "00294c4f-e0dc-4e91-a3c3-4ecb13b455cb",
+        "420809d1-b9eb-4120-918a-63d035a96c98",
+        "5206b40c-9c33-4ae0-b909-c1e61c834f9a"
       ],
       "settings": {
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "title": "Menu",
+        "name_font_size": 1.8,
+        "price_font_size": 1.4,
+        "text_line_height": 1,
+        "name_font_bold": true,
+        "price_font_bold": false
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "background-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
+    "1656371504387448a8": {
+      "type": "apps",
+      "disabled": true,
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "8d703c00-7aa3-415f-b121-8a53d3b1081b": {
+          "type": "shopify:\/\/apps\/xo-gallery\/blocks\/xo-gallery\/e61dfbaa-1a75-4e4e-bffc-324f17325251",
           "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
+            "type": "gallery",
+            "id": 1
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "8d703c00-7aa3-415f-b121-8a53d3b1081b"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "include_margins": true
       }
     },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
+    "16563740202a777685": {
+      "type": "ilja-footer",
+      "disabled": true,
       "blocks": {
-        "column1": {
-          "type": "column",
+        "ef4ef962-c409-4123-8c4e-824ad536ef31": {
+          "type": "image",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/logo-black.png",
+            "image_width": 160,
+            "alignment": "center"
           }
         },
-        "column2": {
-          "type": "column",
+        "16252bad-b5f1-4fc4-b817-8a7418dc908c": {
+          "type": "link_list",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "heading": "Products",
+            "menu": "footer"
           }
         },
-        "column3": {
-          "type": "column",
+        "2198c889-c0cd-4a9a-8979-61452949b630": {
+          "type": "list",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "heading": "Contact",
+            "list_item_1": "info@ironfurnacecoffee.com",
+            "list_item_2": "(814) 518-5151",
+            "list_item_3": ""
+          }
+        },
+        "58025b61-7802-4851-81ab-70cc604a761a": {
+          "type": "list",
+          "settings": {
+            "heading": "Location",
+            "list_item_1": "1236 Liberty St",
+            "list_item_2": "Franklin, PA 16323",
+            "list_item_3": ""
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "ef4ef962-c409-4123-8c4e-824ad536ef31",
+        "16252bad-b5f1-4fc4-b817-8a7418dc908c",
+        "2198c889-c0cd-4a9a-8979-61452949b630",
+        "58025b61-7802-4851-81ab-70cc604a761a"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
         "color_scheme": "background-1",
-        "columns_mobile": "1",
+        "show_copyright": true,
+        "show_social": true,
+        "margin_top": 0,
         "padding_top": 36,
         "padding_bottom": 36
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "165637056753e6faef",
+    "16563706434dbbb576",
+    "1656371504387448a8",
+    "16563740202a777685"
   ]
 }

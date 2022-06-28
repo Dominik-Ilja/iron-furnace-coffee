@@ -1,5 +1,6 @@
 {% comment %}theme-check-disable UndefinedObject{% endcomment %}
-{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+{{ 'ilja-footer.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'section-footer.css' | asset_url | stylesheet_tag }} {% endcomment %}
 <link rel="stylesheet" href="{{ 'component-newsletter.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-list-menu.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-list-payment.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -39,12 +40,9 @@
 
   {% comment %} CUSTOM STYLES {% endcomment %}
     .footer__top {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+
     }
     .footer__bottom {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
     }
     .footer__bottom:first-child {
       
@@ -63,20 +61,31 @@
 
 <footer class="footer section-{{ section.id }}-padding">
 
-  <div class="page-width">
+  <div class="footer__container page-width">
     <!-- Footer Top -->
     {%- if section.blocks.size > 0 -%}
     <div class="footer__top">
       {%- for block in section.blocks -%}
-      <div>    
+      <div class="flex flex-column">    
         {%- if block.settings.heading != blank -%}
         <!-- Block Heading -->
-        <h2 class="footer-block__heading">{{- block.settings.heading | escape -}}</h2>
+        <h2 class="footer__list-title">{{- block.settings.heading | escape -}}</h2>
         {%- endif -%}
         <!-- Block Body -->
         {% comment %} Decide what should be rendered based on the block type {% endcomment %}
         {%- case block.type -%}
-          {%- when 'contact' -%}
+          {%- when 'list' -%}
+            <ul class="list-unstyled">
+              {%- if block.settings.list_item_1 != blank -%}
+                <li>{{- block.settings.list_item_1 | escape -}}</li>
+              {%- endif -%}
+              {%- if block.settings.list_item_2 != blank -%}
+                <li>{{- block.settings.list_item_2 | escape -}}</li>
+              {%- endif -%}
+              {%- if block.settings.list_item_3 != blank -%}
+                <li>{{- block.settings.list_item_3 | escape -}}</li>
+              {%- endif -%}
+            </ul>
           {%- when 'image' -%}
             <div class="footer-image">
               {%- if block.settings.image != blank -%}
@@ -92,10 +101,10 @@
             </div>
           {%- when 'link_list' -%}
             {%- if block.settings.menu != blank and block.settings.heading != blank -%}
-            <ul class="footer-block__details-content list-unstyled">
+            <ul class="list-unstyled">
               {%- for link in block.settings.menu.links -%}
               <li>
-                <a href="{{ link.url }}" class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}">
+                <a href="{{ link.url }}" class="text-decoration-none{% if link.active %} list-menu__item--active{% endif %}">
                   {{ link.title }}
                 </a>
               </li>
@@ -124,8 +133,8 @@
           {%- endif -%}
           {%- if settings.social_facebook_link != blank -%}
             <li class="list-social__item">
-              <a href="{{ settings.social_facebook_link }}" class="link list-social__link" >
-                {%- render 'icon-facebook' -%}
+              <a href="{{ settings.social_facebook_link }}" class="link" style="margin-right: 1rem;">
+                {%- render 'ilja-icon-facebook' -%}
                 <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
               </a>
             </li>
@@ -140,8 +149,8 @@
           {%- endif -%}
           {%- if settings.social_instagram_link != blank -%}
             <li class="list-social__item">
-              <a href="{{ settings.social_instagram_link }}" class="link list-social__link" >
-                {%- render 'icon-instagram' -%}
+              <a href="{{ settings.social_instagram_link }}" class="link" >
+                {%- render 'ilja-icon-instagram' -%}
                 <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
               </a>
             </li>
@@ -202,66 +211,19 @@
 
 </footer>
 
-{% javascript %}
-  class LocalizationForm extends HTMLElement {
-    constructor() {
-      super();
-      this.elements = {
-        input: this.querySelector('input[name="locale_code"], input[name="country_code"]'),
-        button: this.querySelector('button'),
-        panel: this.querySelector('.disclosure__list-wrapper'),
-      };
-      this.elements.button.addEventListener('click', this.openSelector.bind(this));
-      this.elements.button.addEventListener('focusout', this.closeSelector.bind(this));
-      this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
-
-      this.querySelectorAll('a').forEach(item => item.addEventListener('click', this.onItemClick.bind(this)));
-    }
-
-    hidePanel() {
-      this.elements.button.setAttribute('aria-expanded', 'false');
-      this.elements.panel.setAttribute('hidden', true);
-    }
-
-    onContainerKeyUp(event) {
-      if (event.code.toUpperCase() !== 'ESCAPE') return;
-
-      this.hidePanel();
-      this.elements.button.focus();
-    }
-
-    onItemClick(event) {
-      event.preventDefault();
-      const form = this.querySelector('form');
-      this.elements.input.value = event.currentTarget.dataset.value;
-      if (form) form.submit();
-    }
-
-    openSelector() {
-      this.elements.button.focus();
-      this.elements.panel.toggleAttribute('hidden');
-      this.elements.button.setAttribute('aria-expanded', (this.elements.button.getAttribute('aria-expanded') === 'false').toString());
-    }
-
-    closeSelector(event) {
-      const shouldClose = event.relatedTarget && event.relatedTarget.nodeName === 'BUTTON';
-      if (event.relatedTarget === null || shouldClose) {
-        this.hidePanel();
-      }
-    }
-  }
-
-  customElements.define('localization-form', LocalizationForm);
-{% endjavascript %}
-
 {% schema %}
 {
-  "name": "t:sections.footer.name",
+  "name": "Footer (Ilja)",
+  "presets": [
+    {
+      "name": "Footer (Ilja)"
+    }
+  ],
   "max_blocks": 10,
   "blocks": [
     {
-      "type": "contact",
-      "name": "Contact",
+      "type": "list",
+      "name": "List",
       "settings": [
         {
           "type": "text",
@@ -459,16 +421,6 @@
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
     }
-  ],
-  "default": {
-    "blocks": [
-      {
-        "type": "link_list"
-      },
-      {
-        "type": "text"
-      }
-    ]
-  }
+  ]
 }
 {% endschema %}
