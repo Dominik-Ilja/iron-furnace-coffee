@@ -1,4 +1,6 @@
 /* 
+   *BREAKPOINTS*
+*/ /* 
    * Flex Utilities* 
 */
 .flex {
@@ -7,6 +9,20 @@
 
 .flex-column {
   flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+@media only screen and (min-width: 500px) {
+  .sm\:align-items-stretch {
+    align-items: stretch;
+  }
 }
 
 /* 
@@ -24,3 +40,7 @@
 .text-decoration-none {
   text-decoration: none !important;
 }
+
+/* 
+   *  *
+*/

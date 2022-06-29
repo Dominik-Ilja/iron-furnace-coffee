@@ -1,73 +1,63 @@
-.footer {
-  background-color: #f7f2f4;
-}
-.footer__container {
-  display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 6rem;
-}
-.footer__top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-.footer__bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.footer__list-title {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
+@use "variables" as var;
 
-@media only screen and (max-width: 850px) {
-  .footer__container {
+.footer {
+  // background-color: #eeeeee;
+
+  &__container {
     display: grid;
     grid-template-columns: 1fr;
-    max-width: 500px;
-    row-gap: 6rem;
-  }
-  .footer__top {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 6rem;
-    row-gap: 6rem;
-    justify-content: space-between;
-    align-content: center;
-
-    > * {
-      width: fit-content;
-    }
-
-    *:nth-child(even) {
-      justify-self: end;
-    }
-  }
-  .footer__bottom {
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .footer__container {
     max-width: 300px;
     justify-content: center;
     align-content: center;
-  }
 
-  .footer__top {
+    @media only screen and (min-width: var.$bp-sm) {
+      max-width: 500px;
+    }
+    @media only screen and (min-width: 850px) {
+      max-width: none;
+    }
+  }
+  &__top {
+    display: grid;
     grid-template-columns: 1fr;
     align-content: center;
     justify-items: center;
     text-align: center;
+    row-gap: 2.5rem;
 
-    > * {
-      width: fit-content;
+    @media only screen and (min-width: var.$bp-sm) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 6rem;
+      row-gap: 6rem;
+      justify-content: space-between;
+      align-content: stretch;
+
+      > * {
+        width: fit-content;
+      }
+
+      *:nth-child(odd) {
+        justify-self: start;
+      }
+      *:nth-child(even) {
+        justify-self: end;
+      }
     }
 
-    *:nth-child(even) {
-      justify-self: auto;
+    @media only screen and (min-width: 850px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: left;
     }
+  }
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__list-title {
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 }

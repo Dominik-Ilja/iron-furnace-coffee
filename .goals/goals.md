@@ -1,0 +1,10 @@
+- [X] ~~*Complete Footer*~~ [2022-06-28]
+- [ ] Complete Product Links
+  - [ ] Products Page
+  - [ ] Wholesale Page
+  - [ ] In House Menu
+    - [ ] Make Menu from Homepage keep its info for this page
+- [ ] Checkout
+- [ ] Product Page
+- [ ] Featured Products
+- [ ] Gallery

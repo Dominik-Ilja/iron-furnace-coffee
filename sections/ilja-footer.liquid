@@ -38,26 +38,106 @@
     }
   {% comment %} DEFAULT STYLES {% endcomment %}
 
+  
   {% comment %} CUSTOM STYLES {% endcomment %}
+  .footer {
+    background-image: {{ section.settings.background_gradient }};
+    background-color: {{ section.settings.background_color }};
+  }
+  .footer a {
+    {%- if section.settings.link_color != blank -%}
+      color: {{section.settings.link_color}};
+    {%- endif -%}
+    transition: color 0.35s;
+  }
+  .footer a:hover {
+    {%- if section.settings.link_color != blank -%}
+      color: {{section.settings.link_color_hover}};
+    {%- endif -%}
+  }
+  .footer__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    justify-content: center;
+    align-content: center;
+    row-gap: {{ section.settings.row_gap_container_mobile }}rem;
+    
+    {%- if section.settings.text_color != blank -%}
+      color: {{section.settings.text_color}};
+    {%- endif -%}
+  }
+  .footer__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    justify-items: center;
+    text-align: center;
+    gap: {{ section.settings.row_gap_top_mobile }}rem;
+  }
+  .footer__list-title {
+    {%- if section.settings.bold_headers -%}
+      font-weight: 600;
+    {%- endif -%}
+    {%- if section.settings.headers_color != blank -%}
+      color: {{section.settings.headers_color}};
+    {%- endif -%}
+    margin-bottom: 1rem;
+  }
+  .footer .social-icon {
+    width: {{section.settings.social_size}}px;
+    height: {{section.settings.social_size}}px;
+  }
+  @media only screen and (min-width: 500px) {
+    .footer__container {
+      row-gap: {{ section.settings.row_gap_container_tablet }}rem;
+      max-width: 500px;
+    }
     .footer__top {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+      align-content: stretch;
+      gap: {{ section.settings.row_gap_top_tablet }}rem;
+    }
+  }
+  @media only screen and (min-width: 850px) {
+    .footer__container {
+      max-width: var(--page-width);
+    }
+    .footer__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
 
-    }
-    .footer__bottom {
-    }
-    .footer__bottom:first-child {
-      
-    }
-    .footer__bottom:last-child {}
-    .footer-image {
-      
-    }
-    .footer-image svg, .footer-image img{
-      width: 100%;
-    }
+
   {% comment %} CUSTOM STYLES {% endcomment %}
-
-
 {%- endstyle -%}
+
+{% stylesheet 'scss' %}
+    &__top {
+      row-gap: 2.5rem;
+
+      @media only screen and (min-width: var.$bp-sm) {
+
+      }
+
+      @media only screen and (min-width: 850px) {
+
+      }
+    }
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__list-title {
+      margin-bottom: 1rem;
+    }
+  }
+{% endstylesheet %}
 
 <footer class="footer section-{{ section.id }}-padding">
 
@@ -66,7 +146,7 @@
     {%- if section.blocks.size > 0 -%}
     <div class="footer__top">
       {%- for block in section.blocks -%}
-      <div class="flex flex-column">    
+      <div class="flex flex-column align-items-center sm:align-items-stretch">    
         {%- if block.settings.heading != blank -%}
         <!-- Block Heading -->
         <h2 class="footer__list-title">{{- block.settings.heading | escape -}}</h2>
@@ -87,6 +167,17 @@
               {%- endif -%}
             </ul>
           {%- when 'image' -%}
+            <style>
+              .footer-image {
+                max-width: min(100%, {{ block.settings.image_width_mobile }}px);
+              }
+
+              @media only screen and (min-width: 500px) {
+                .footer-image {
+                  max-width: min(100%, {{ block.settings.image_width }}px);
+                }
+              }
+            </style>
             <div class="footer-image">
               {%- if block.settings.image != blank -%}
               {%- assign image_size_2x = block.settings.image_width | times: 2 | at_most: 5760 -%}
@@ -132,9 +223,10 @@
             </li>
           {%- endif -%}
           {%- if settings.social_facebook_link != blank -%}
-            <li class="list-social__item">
-              <a href="{{ settings.social_facebook_link }}" class="link" style="margin-right: 1rem;">
-                {%- render 'ilja-icon-facebook' -%}
+            <li class="flex" style="margin-right: 1rem;">
+              <a href="{{ settings.social_facebook_link }}" class="flex">
+                {% comment %} <img class="social-icon" src="{{ 'ilja-icon-facebook.png' | asset_url }}" /> {% endcomment %}
+                {%- render 'ilja-icon-facebook-2.liquid' -%}
                 <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
               </a>
             </li>
@@ -148,9 +240,10 @@
             </li>
           {%- endif -%}
           {%- if settings.social_instagram_link != blank -%}
-            <li class="list-social__item">
-              <a href="{{ settings.social_instagram_link }}" class="link" >
-                {%- render 'ilja-icon-instagram' -%}
+            <li class="flex">
+              <a href="{{ settings.social_instagram_link }}" class="flex" >
+                {% comment %} <img class="social-icon" src="{{ 'ilja-icon-instagram.png' | asset_url }}" /> {% endcomment %}
+                {%- render 'ilja-icon-instagram-2.liquid' -%}
                 <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
               </a>
             </li>
@@ -172,8 +265,8 @@
             </li>
           {%- endif -%}
           {%- if settings.social_snapchat_link != blank -%}
-            <li class="list-social__item">
-              <a href="{{ settings.social_snapchat_link }}" class="link list-social__link" >
+            <li class="">
+              <a href="{{ settings.social_snapchat_link }}" class="" >
                 {%- render 'icon-snapchat' -%}
                 <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
               </a>
@@ -302,7 +395,17 @@
           "max": 200,
           "step": 5,
           "unit": "px",
-          "label": "Image width",
+          "label": "Image Width Desktop",
+          "default": 100
+        },
+        {
+          "type": "range",
+          "id": "image_width_mobile",
+          "min": 50,
+          "max": 200,
+          "step": 5,
+          "unit": "px",
+          "label": "Image Width Mobile",
           "default": 100
         },
         {
@@ -363,6 +466,21 @@
     },
     {
       "type": "header",
+      "content": "Custom Footer Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Solid Color"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background Gradient",
+      "info": "Overrides Solid Color"
+    },
+    {
+      "type": "header",
       "content": "Copyright",
       "info": "Displays Copyright text"
     },
@@ -374,14 +492,65 @@
     },
     {
       "type": "header",
-      "content": "t:sections.footer.settings.header__2.content",
-      "info": "t:sections.footer.settings.header__2.info"
+      "content": "Social Media Icons",
+      "info": "To display your social media accounts, link them in your theme settings."
     },
     {
       "type": "checkbox",
       "id": "show_social",
       "default": false,
       "label": "t:sections.footer.settings.show_social.label"
+    },
+    {
+      "type": "header",
+      "content": "Social Media Icon Size"
+    },
+    {
+      "type": "range",
+      "id": "social_size",
+      "min": 18,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Size",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "Headers"
+    },
+    {
+      "type": "checkbox",
+      "id": "bold_headers",
+      "label": "Bold Headers?"
+    },
+    {
+      "type": "color",
+      "id": "headers_color",
+      "label": "Header Color"
+    },
+    {
+      "type": "header",
+      "content": "Text Color"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Select Text Color"
+    },
+    {
+      "type": "header",
+      "content": "Link Colors"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Select Link Color"
+    },
+    {
+      "type": "color",
+      "id": "link_color_hover",
+      "label": "Select Link Hover Color"
     },
     {
       "type": "header",
@@ -420,6 +589,54 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Footer Top and Bottom Spacing"
+    },
+    {
+      "type": "range",
+      "id": "row_gap_container_mobile",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "rem",
+      "label": "Mobile Spacing",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "row_gap_container_tablet",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "rem",
+      "label": "Tablet Spacing",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Footer Top Spacing"
+    },
+    {
+      "type": "range",
+      "id": "row_gap_top_mobile",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "rem",
+      "label": "Mobile Spacing",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "row_gap_top_tablet",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "rem",
+      "label": "Tablet Spacing",
+      "default": 6
     }
   ]
 }

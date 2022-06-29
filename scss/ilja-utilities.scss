@@ -1,3 +1,5 @@
+@use "./variables" as var;
+
 /* 
    * Flex Utilities* 
 */
@@ -7,6 +9,19 @@
 }
 .flex-column {
   flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+.sm\:align-items-stretch {
+  @media only screen and (min-width: var.$bp-sm) {
+    align-items: stretch;
+  }
 }
 
 /* 
@@ -26,3 +41,7 @@
 .text-decoration-none {
   text-decoration: none !important;
 }
+
+/* 
+   *  *
+*/

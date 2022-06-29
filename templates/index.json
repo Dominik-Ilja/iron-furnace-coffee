@@ -188,7 +188,6 @@
     },
     "1656371504387448a8": {
       "type": "apps",
-      "disabled": true,
       "blocks": {
         "8d703c00-7aa3-415f-b121-8a53d3b1081b": {
           "type": "shopify:\/\/apps\/xo-gallery\/blocks\/xo-gallery\/e61dfbaa-1a75-4e4e-bffc-324f17325251",
