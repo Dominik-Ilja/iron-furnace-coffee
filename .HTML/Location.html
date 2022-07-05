@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="Styles/Base.css" rel="stylesheet">
+  <link href="Styles/Location.css" rel="stylesheet">
+  <title>Location</title>
+</head>
+
+<body>
+  <div>
+    <style>
+      .location {
+        background-color: var(--color-primary);
+        padding-top: 9rem;
+        padding-bottom: 9rem;
+      }
+
+      .location__title {
+        font-size: 2.7rem;
+        margin-bottom: 0.5rem;
+        color: #fff;
+      }
+
+      .location__text {
+        color: rgb(223, 223, 223);
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .location__link {
+        color: #232323;
+        background-color: #fff;
+        padding-top: 0.75rem;
+        padding-right: 1rem;
+        padding-bottom: 0.75rem;
+        padding-left: 1rem;
+        font-weight: 600;
+      }
+
+      .location__link:hover,
+      .location__link:focus {
+        background-color: var(--color-comp);
+        color: #fff;
+      }
+
+      .location__bg {
+        opacity: 0.15;
+      }
+
+      /* Media Queries Should only Pertain to Sizing */
+      @media only screen and (min-width: 380px) {
+        .location {
+          padding-top: 9rem;
+          padding-bottom: 9rem;
+        }
+
+        .location__title {
+          font-size: 3rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .location__text {
+          margin-bottom: 0.5rem;
+        }
+
+      }
+
+      @media only screen and (min-width: 768px) {
+        .location {
+          padding-top: 9rem;
+          padding-bottom: 9rem;
+        }
+
+        .location__title {
+          font-size: 4rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .location__text {
+          font-size: 1.125rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+    </style>
+    <div class="location">
+      <h1 class="location__title">Iron Furnace Coffee</h1>
+      <p class="location__text">Located at 1236 Liberty Street, Franklin, PA 16323</p>
+      <a class="location__link" href="#">View Map</a>
+      <!-- <svg class="location__bg location__bg--mobile" viewBox="0 0 857 332" xmlns="http://www.w3.org/2000/svg"
+           preserveAspectRatio="xMaxYMin slice">
+        <path class="location__bg-back" d="M633 111H586V87H561V189H586V158H633V111Z"></path>
+        <path class="location__bg-back"
+              d="M80.11 84.1101L48.74 77.7801V49.3301H29.67H27.85H0V158H30L29.67 139.79L46 126H80L80.11 84.1101Z"></path>
+        <path class="location__bg-back"
+              d="M857 89L850 82.35V42H780V0H690V109H669V134H652V188H743V152V134V115H780V113H850V111H857V89Z"></path>
+        <path class="location__bg-back" d="M139.89 92H119V134H139.89V92Z"></path>
+        <path class="location__bg-back" d="M246 77H211V197H246V77Z"></path>
+        <path class="location__bg-back" d="M474 103V45H411V78H363L348 86V103H304V226H477V103H474Z"></path>
+        <path class="location__bg-middle"
+              d="M83.22 124.88L42 125L29 138V158L0 157.89V253.89H38V322.78H52.3V165.04H83.22V157.89V131.89H112.89L113 125L83.22 124.88Z">
+        </path>
+        <path class="location__bg-middle" d="M212 64H150V85L138 97V131L154 131.22V227H168V131.41L212 132V64Z"></path>
+        <path class="location__bg-middle" d="M720 148H584V189H577V310H698V203H720V148Z"></path>
+        <path class="location__bg-middle" d="M857 111H827V248H857V111Z"></path>
+        <path class="location__bg-middle" d="M315 194V92H240L234 97V190H223V281H314V194H315Z"></path>
+        <path class="location__bg-middle" d="M801 51H739V110H801V51Z"></path>
+        <path class="location__bg-middle" d="M430 207V142H393V207V214V258H446.89V207H430Z"></path>
+        <path class="location__bg-front"
+              d="M828 206V104H790L767 83H737V187H664V229V305.78H646V141L595 163V263H579.7V250.96V109H561V65H544V56H537V65H494V98H452L443 110V250.96H408.89V236.74L385.63 207.18V136.59H308.89V192.78H281.44V241.29L249.09 270.81H227.7V226.22H227.56V121.67L167.56 88V226.22H154.67V164.04V130.89H83.22V164.04H52.3V253V321.78H38V253H0V332H29.04H38H52.3H67.04H90.3H154.67H857V318V305.78V229L828 206Z">
+        </path>
+      </svg> -->
+      <svg class="location__bg location__bg--desktop" viewBox="0 0 1400 332" xmlns="http://www.w3.org/2000/svg"
+           preserveAspectRatio="xMinYMax slice">
+        <path class="location__bg-back" d="M1034.07 111H957.293V87H916.453V189H957.293V158H1034.07V111Z"></path>
+        <path class="location__bg-back"
+              d="M130.868 84.1101L79.6219 77.7801V49.3301H48.4691H45.4959H0V158H49.0082L48.4691 139.79L75.1459 126H130.688L130.868 84.1101Z">
+        </path>
+
+        <path class="location__bg-back"
+              d="M1400 89L1388.56 82.35V42H1274.21V0H1127.19V109H1092.88V134H1065.11V188H1213.77V152V134V115H1274.21V113H1388.56V111H1400V89Z">
+        </path>
+
+        <path class="location__bg-back" d="M228.525 92H194.399V134H228.525V92Z"></path>
+        <path class="location__bg-back" d="M401.867 77H344.691V197H401.867V77Z"></path>
+        <path class="location__bg-back"
+              d="M774.329 103V45H671.412V78H592.999L568.495 86V103H496.616V226H779.23V103H774.329Z"></path>
+        <path class="location__bg-middle"
+              d="M135.949 124.88L68.6114 125L47.3746 138V158L0 157.89V253.89H62.077V322.78H85.4376V165.04H135.949V157.89V131.89H184.418L184.597 125L135.949 124.88Z">
+        </path>
+
+        <path class="location__bg-middle"
+              d="M346.324 64H245.041V85L225.438 97V131L251.575 131.22V227H274.446V131.41L346.324 132V64Z"></path>
+        <path class="location__bg-middle" d="M1176.2 148H954.026V189H942.59V310H1140.26V203H1176.2V148Z"></path>
+        <path class="location__bg-middle" d="M1400 111H1350.99V248H1400V111Z"></path>
+        <path class="location__bg-middle" d="M514.586 194V92H392.065L382.264 97V190H364.294V281H512.952V194H514.586Z"></path>
+        <path class="location__bg-middle" d="M1308.52 51H1207.23V110H1308.52V51Z"></path>
+        <path class="location__bg-middle" d="M702.45 207V142H642.007V207V214V258H730.042V207H702.45Z"></path>
+        <path class="location__bg-front"
+              d="M1352.63 206V104H1290.55L1252.98 83H1203.97V187H1084.71V229V305.78H1055.31V141L971.995 163V263H947.001V250.96V109H916.453V65H888.681V56H877.246V65H807.001V98H738.39L723.687 110V250.96H667.965V236.74L629.967 207.18V136.59H504.604V192.78H459.762V241.29L406.915 270.81H371.972V226.22H371.743V121.67L273.727 88V226.22H252.67V164.04V130.89H135.949V164.04H85.4376V253V321.78H62.077V253H0V332H47.4399H62.077H85.4376H109.517H147.515H252.67H1400V318V305.78V229L1352.63 206Z">
+        </path>
+
+      </svg>
+    </div>
+  </div>
+</body>
+
+</html>

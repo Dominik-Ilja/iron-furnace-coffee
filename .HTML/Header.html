@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Styles/Base.css">
+  <link rel="stylesheet" href="Styles/Header.css">
+  <link rel="stylesheet" href="Styles/Mobile-Toggle.css">
+  <link rel="stylesheet" href="Styles/Showcase.css">
+  <script defer src="Logic/Header.js"></script>
+  <title>Header</title>
+</head>
+
+<body>
+  <style></style>
+  <header class="header">
+    <div class="header__inner">
+      <!-- logo -->
+      <div class="header__logo">
+        <img src="Assets/logo-black.png" alt="">
+      </div>
+      <!-- Mobile Toggle -->
+      <button id="mobile-toggle-open" class="mobile-toggle" data-isOpen="false">
+        <div class="mobile-toggle__line mobile-toggle__line--1"></div>
+        <div class="mobile-toggle__line mobile-toggle__line--2"></div>
+        <div class="mobile-toggle__line mobile-toggle__line--3"></div>
+      </button>
+      <!-- navigation -->
+      <nav id="header-nav" class="header__nav transition">
+
+        <button id="mobile-toggle-close" class="mobile-toggle" data-isOpen="true">
+          <div class="mobile-toggle__line mobile-toggle__line--1"></div>
+          <div class="mobile-toggle__line mobile-toggle__line--2"></div>
+          <div class="mobile-toggle__line mobile-toggle__line--3"></div>
+        </button>
+
+        <ul class="header__list">
+          <li class="header__item">
+            <a class="header__link" href="#">Home</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#">Wholesale</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link" href="#">In House</a>
+          </li>
+          <li class="header__item">
+            <a class="header__link-cart" href="#">
+              <svg class="header__cart" viewBox="0 0 16 20" xmlns="http://www.w3.org/2000/svg">
+                <path class="header__cart-path"
+                      d="M14 4H12C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4H2C0.9 4 0 4.9 0 6V18C0 19.1 0.9 20 2 20H14C15.1 20 16 19.1 16 18V6C16 4.9 15.1 4 14 4ZM6 8C6 8.55 5.55 9 5 9C4.45 9 4 8.55 4 8V6H6V8ZM8 2C9.1 2 10 2.9 10 4H6C6 2.9 6.9 2 8 2ZM12 8C12 8.55 11.55 9 11 9C10.45 9 10 8.55 10 8V6H12V8Z"
+                      fill="#343434" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <svg class="header__bg-image" viewBox="0 0 1400 1994" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_298_325)">
+        <path class="header__bg-path header__bg-path--1"
+              d="M702.503 -293.427L720.701 -233.087C739.188 -172.581 775.585 -51.9018 751.365 33.3167C727.044 118.709 642.206 168.466 589.062 237.217C536.018 305.794 514.767 393.191 481.9 473.417C448.932 553.817 404.448 626.872 338.621 688.301C273.183 749.722 186.79 799.509 150.464 877.739C114.326 956.308 128.065 1062.98 96.5385 1144.21C65.1123 1225.27 -11.4797 1280.71 -50.064 1308.27L-88.3599 1335.99L-682.128 993.181L-660.55 955.806C-638.972 918.431 -595.815 843.682 -552.859 769.281C-509.803 694.705 -467.048 620.651 -423.992 546.076C-381.036 471.674 -337.88 396.925 -294.924 322.524C-251.868 247.948 -209.113 173.894 -166.057 99.319C-123.101 24.9175 -79.9445 -49.8317 -36.9888 -124.233C6.06735 -198.809 48.8224 -272.863 91.8785 -347.438C134.834 -421.839 177.991 -496.589 199.569 -533.963L221.147 -571.338L702.503 -293.427Z" />
+        <path class="header__bg-path header__bg-path--2"
+              d="M803.386 -235.182L777.484 -200.304C751.582 -165.425 699.779 -95.6685 657.688 -20.7678C615.785 54.4733 583.406 134.518 533.72 205.266C484.135 275.84 416.767 336.61 351.905 398.365C286.655 460.126 223.723 522.531 182.685 598.271C141.458 673.671 122.514 762.399 101.464 849.448C80.6021 936.837 58.0237 1022.54 9.20283 1093.79C-39.5177 1164.86 -114.38 1221.3 -151.812 1249.53L-189.243 1277.75L-682.128 993.181L-660.55 955.806C-638.972 918.431 -595.815 843.682 -552.859 769.281C-509.803 694.705 -467.048 620.651 -423.992 546.076C-381.036 471.674 -337.88 396.925 -294.924 322.524C-251.868 247.948 -209.113 173.894 -166.057 99.319C-123.101 24.9175 -79.9445 -49.8317 -36.9888 -124.233C6.06735 -198.809 48.8224 -272.863 91.8785 -347.438C134.834 -421.839 177.991 -496.589 199.569 -533.963L221.147 -571.338L803.386 -235.182Z" />
+        <path class="header__bg-path header__bg-path--3"
+              d="M480.56 -421.566L484.924 -369.214C489.287 -316.862 498.013 -212.158 480.422 -123.112C463.019 -33.726 419.111 39.6622 364.525 107.581C310.04 175.326 244.978 237.428 179.828 299.015C114.577 360.777 49.9162 422.183 9.74244 498.423C-30.3309 574.489 -45.8167 665.214 -91.0784 738.284C-136.44 811.528 -212.054 866.611 -238.105 951.004C-264.343 1035.06 -241.205 1148.08 -229.636 1204.59L-218.067 1261.11L-682.128 993.181L-660.55 955.806C-638.972 918.431 -595.815 843.682 -552.859 769.281C-509.803 694.705 -467.048 620.651 -423.992 546.076C-381.036 471.674 -337.88 396.925 -294.924 322.524C-251.868 247.948 -209.113 173.894 -166.057 99.319C-123.101 24.9174 -79.9446 -49.8317 -36.9888 -124.233C6.06732 -198.809 48.8223 -272.863 91.8785 -347.438C134.834 -421.839 177.991 -496.589 199.569 -533.963L221.147 -571.338L480.56 -421.566Z" />
+        <path class="header__bg-path header__bg-path--4"
+              d="M529.561 -393.275L499.912 -360.56C469.975 -328.012 410.677 -262.581 357.057 -194.337C303.336 -125.919 255.969 -54.5279 214.642 21.046C173.704 96.6124 139.195 176.354 86.1507 244.931C33.0063 313.682 -38.5725 371.094 -79.3227 447.001C-119.684 522.9 -129.405 616.954 -146.708 706.166C-164.399 795.386 -189.86 879.425 -227.151 957.328C-264.342 1035.06 -313.264 1106.48 -337.724 1142.19L-362.185 1177.9L-682.128 993.181L-660.55 955.806C-638.972 918.431 -595.815 843.682 -552.859 769.281C-509.803 694.705 -467.048 620.651 -423.992 546.076C-381.036 471.674 -337.88 396.925 -294.924 322.524C-251.868 247.948 -209.113 173.894 -166.057 99.319C-123.101 24.9175 -79.9445 -49.8317 -36.9887 -124.233C6.06741 -198.809 48.8224 -272.862 91.8786 -347.438C134.834 -421.839 177.991 -496.589 199.569 -533.963L221.147 -571.338L529.561 -393.275Z" />
+        <path class="header__bg-path header__bg-path--5"
+              d="M382.56 -478.146L361.846 -440.272C341.421 -402.232 299.994 -326.484 249.544 -256.41C198.706 -186.327 138.656 -122.258 102.23 -43.8555C66.1916 34.54 53.5883 126.929 10.6325 201.331C-32.4236 275.906 -105.732 332.32 -165.794 397.077C-225.467 461.827 -271.506 534.912 -298.609 618.466C-325.812 702.194 -333.979 796.218 -373.576 872.79C-413.361 949.022 -484.188 1007.8 -519.89 1037.02L-555.304 1066.4L-682.128 993.181L-660.55 955.806C-638.972 918.431 -595.815 843.682 -552.859 769.281C-509.803 694.705 -467.048 620.651 -423.992 546.076C-381.036 471.674 -337.88 396.925 -294.924 322.524C-251.868 247.948 -209.113 173.894 -166.057 99.319C-123.101 24.9175 -79.9445 -49.8317 -36.9887 -124.233C6.06738 -198.809 48.8224 -272.863 91.8785 -347.438C134.834 -421.839 177.991 -496.589 199.569 -533.963L221.147 -571.338L382.56 -478.146Z" />
+      </g>
+      <defs>
+        <clipPath id="clip0_298_325">
+          <rect width="1806.55" height="1996.96" fill="white" transform="translate(1953.45 428.809) rotate(120)" />
+        </clipPath>
+      </defs>
+    </svg>
+
+  </header>
+  <div>
+    <style>
+      .showcase {
+        max-width: 768px;
+        border-top: 3px solid #f8f6f6;
+        border-bottom: 3px solid #f8f6f6;
+        padding: 4rem 1rem;
+      }
+
+      .showcase__text {
+        line-height: 1.8;
+        font-size: 1.2rem;
+        max-width: 86%;
+        font-weight: 300;
+      }
+
+      @media only screen and (min-width: 380px) {
+        .showcase {
+          padding: 4rem 1rem;
+        }
+
+        .showcase__text {
+          line-height: 1.6;
+          font-size: 1.3rem;
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .showcase {
+          padding: 4rem 1rem;
+        }
+
+        .showcase__text {
+          line-height: 1.6;
+          font-size: 1.5rem;
+        }
+      }
+
+      @media only screen and (min-width: 828px) {
+        .showcase__image {
+          right: -13rem;
+          max-height: none;
+        }
+      }
+    </style>
+    <div class="showcase">
+      <p class="showcase__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio
+        mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus
+        urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac,
+        vestibulum eu nisl.
+      </p>
+      <img class="showcase__image" src="Assets/showcase-image.png" alt="">
+    </div>
+  </div>
+</body>
+
+</html>

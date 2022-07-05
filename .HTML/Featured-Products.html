@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="Styles/Base.css">
+  <link rel="stylesheet" href="Styles/Featured-Products.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Products</title>
+</head>
+
+<body>
+  <div>
+    <style>
+      .featured-products {
+        grid-template-columns: repeat(auto-fit, minmax(284px, 1fr));
+        gap: 2rem;
+      }
+
+      .featured-products .product {
+        max-width: 284px;
+        outline: 4px solid transparent;
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+
+      .featured-products .product:hover {
+        outline-color: var(--color-primary);
+        background-color: #c7b7ab;
+      }
+
+      .featured-products .product__image {
+        margin-bottom: 1rem;
+      }
+
+      .featured-products .product__name {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: inherit;
+      }
+
+      .featured-products .product__price {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0;
+        color: #393939;
+      }
+
+      @media only screen and (min-width: 380px) {
+        .featured-products {
+          gap: 2rem;
+        }
+
+        .featured-products .product__image {
+          margin-bottom: 1rem;
+        }
+
+        .featured-products .product__name {
+          font-size: 1.4rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .featured-products .product__price {
+          font-size: 1rem;
+          margin-bottom: 0;
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .featured-products {
+          gap: 2rem;
+        }
+
+        .featured-products .product__image {
+          margin-bottom: 1rem;
+        }
+
+        .featured-products .product__name {
+          font-size: 1.4rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .featured-products .product__price {
+          font-size: 1rem;
+          margin-bottom: 0;
+        }
+      }
+    </style>
+    <div class="featured-products">
+      <div class="product">
+        <div class="product__image">
+          <img src="Assets/black-coffee-bag.png" alt="">
+        </div>
+        <div class="product__info">
+          <h4 class="product__name">Oasis Blend</h4>
+          <p class="product__price">$17.50 - $90.50</p>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product__image">
+          <img src="Assets/black-coffee-bag.png" alt="">
+        </div>
+        <div class="product__info">
+          <h4 class="product__name">Perpetual Espresso</h4>
+          <p class="product__price">$15.25 - $79.25</p>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product__image">
+          <img src="Assets/black-coffee-bag.png" alt="">
+        </div>
+        <div class="product__info">
+          <h4 class="product__name">All Day Dark Roast</h4>
+          <p class="product__price">$15.25 - $79.00</p>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product__image">
+          <img src="Assets/black-coffee-bag.png" alt="">
+        </div>
+        <div class="product__info">
+          <h4 class="product__name">Tusk Espresso</h4>
+          <p class="product__price">$15.75 - $82.50</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Styles/Base.css">
+  <link rel="stylesheet" href="Styles/Showcase.css">
+  <title>Showcase</title>
+</head>
+
+<body>
+  <div>
+    <style>
+      .showcase {
+        max-width: 768px;
+        border-top: 3px solid #f8f6f6;
+        border-bottom: 3px solid #f8f6f6;
+        padding: 4rem 1rem;
+      }
+
+      .showcase__text {
+        line-height: 1.8;
+        font-size: 1.2rem;
+        max-width: 86%;
+        font-weight: 300;
+      }
+
+      @media only screen and (min-width: 380px) {
+        .showcase {
+          padding: 4rem 1rem;
+        }
+
+        .showcase__text {
+          line-height: 1.6;
+          font-size: 1.3rem;
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .showcase {
+          padding: 4rem 1rem;
+        }
+
+        .showcase__text {
+          line-height: 1.6;
+          font-size: 1.5rem;
+        }
+      }
+
+      @media only screen and (min-width: 828px) {
+        .showcase__image {
+          right: -13rem;
+          max-height: none;
+        }
+      }
+    </style>
+    <div class="showcase">
+      <p class="showcase__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio
+        mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus
+        urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac,
+        vestibulum eu nisl.
+      </p>
+      <img class="showcase__image" src="Assets/showcase-image.png" alt="">
+    </div>
+  </div>
+</body>
+
+</html>

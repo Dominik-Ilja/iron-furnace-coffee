@@ -1,4 +1,6 @@
 - [X] ~~*Complete Footer*~~ [2022-06-28]
+- [ ] Header
+  - [ ] Learn how items are added to your cart
 - [ ] Complete Product Links
   - [ ] Products Page
   - [ ] Wholesale Page

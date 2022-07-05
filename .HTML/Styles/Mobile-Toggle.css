@@ -1,0 +1,60 @@
+.mobile-toggle {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid #343434;
+  /* border: none; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: border 0.25s;
+  /* z-index: 1010; */
+}
+.mobile-toggle:hover {
+  border-color: var(--color-primary);
+}
+.mobile-toggle:hover .mobile-toggle__line {
+  background-color: var(--color-primary);
+}
+.mobile-toggle__line {
+  position: absolute;
+  height: 2px;
+  width: 80%;
+  background-color: #343434;
+  transition: all 0.25s;
+}
+.mobile-toggle__line--1 {
+  transform: translateY(-8px);
+}
+.mobile-toggle__line--2 {
+}
+.mobile-toggle__line--3 {
+  transform: translateY(8px);
+}
+
+.mobile-toggle[data-isOpen="true"] {
+  /* border-color: var(--color-primary); */
+}
+
+.mobile-toggle[data-isOpen="true"] .mobile-toggle__line {
+  /* background-color: var(--color-primary); */
+}
+.mobile-toggle[data-isOpen="true"] .mobile-toggle__line--1 {
+  transform: translateY(0) rotate(135deg);
+}
+.mobile-toggle[data-isOpen="true"] .mobile-toggle__line--2 {
+  transform: scale(0);
+}
+.mobile-toggle[data-isOpen="true"] .mobile-toggle__line--3 {
+  transform: translateY(0) rotate(-135deg);
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-toggle {
+    display: none;
+  }
+}
