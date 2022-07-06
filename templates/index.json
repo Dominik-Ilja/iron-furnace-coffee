@@ -1,5 +1,29 @@
 {
   "sections": {
+    "1657063113094b6368": {
+      "type": "ilja-showcase",
+      "settings": {
+        "showcase_width": 768,
+        "showcase_image_sm": -18,
+        "showcase_image_md": -18,
+        "showcase_image_lg": -25,
+        "showcase_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl.",
+        "showcase_line_height": 1.8,
+        "showcase_text_width": 86,
+        "showcase_text_font_size_sm": 1.8,
+        "showcase_text_font_size_md": 1.8,
+        "showcase_text_font_size_lg": 2,
+        "showcase_text_color": "#343434",
+        "showcase_text_bold": false,
+        "showcase_border_color": "#c2c2c2",
+        "showcase_margin_sm": 0,
+        "showcase_margin_md": 0,
+        "showcase_margin_lg": 10,
+        "showcase_padding_sm": 0,
+        "showcase_padding_md": 0,
+        "showcase_padding_lg": 5
+      }
+    },
     "165637056753e6faef": {
       "type": "ilja-hours",
       "blocks": {
@@ -213,6 +237,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/logo-black.png",
             "image_width": 160,
+            "image_width_mobile": 100,
             "alignment": "center"
           }
         },
@@ -250,18 +275,75 @@
       ],
       "settings": {
         "color_scheme": "background-1",
+        "background_color": "",
+        "background_gradient": "",
         "show_copyright": true,
         "show_social": true,
+        "social_size": 32,
+        "bold_headers": false,
+        "headers_color": "",
+        "text_color": "",
+        "link_color": "",
+        "link_color_hover": "",
         "margin_top": 0,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "row_gap_container_mobile": 6,
+        "row_gap_container_tablet": 6,
+        "row_gap_top_mobile": 6,
+        "row_gap_top_tablet": 6
+      }
+    },
+    "165705202453619c53": {
+      "type": "ilja-location",
+      "settings": {
+        "location_title": "Iron Furnace Coffee",
+        "location_text": "Located at 1236 Liberty Street, Franklin, PA 16323",
+        "location_link": "View Map",
+        "location_href": "https:\/\/goo.gl\/maps\/5ruPDzLMASmqsTxj8",
+        "location_title_font_size_sm": 4,
+        "location_title_font_size_md": 5.2,
+        "location_title_font_size_lg": 6.8,
+        "location_text_font_size_sm": 1.8,
+        "location_text_font_size_md": 1.8,
+        "location_text_font_size_lg": 2.2,
+        "location_link_font_size_sm": 1.6,
+        "location_link_font_size_md": 1.6,
+        "location_link_font_size_lg": 1.6,
+        "location_title_color": "#ffffff",
+        "location_title_bold": false,
+        "location_text_color": "#ffffff",
+        "location_text_bold": false,
+        "location_link_color": "#232323",
+        "location_link_color_hover": "#ffffff",
+        "location_link_bg_color": "#ffffff",
+        "location_link_bg_hover": "#576d7d",
+        "location_link_bold": true,
+        "location_bg_color": "#a17c63",
+        "location_bg_opacity": 0.2,
+        "location_title_margin_sm": 2.1,
+        "location_title_margin_md": 0,
+        "location_title_margin_lg": 0,
+        "location_text_margin_sm": 2,
+        "location_text_margin_md": 1.9,
+        "location_text_margin_lg": 1.9,
+        "location_margin_sm": 10,
+        "location_margin_md": 10,
+        "location_margin_lg": 10,
+        "location_padding_sm": 11,
+        "location_padding_md": 11,
+        "location_padding_lg": 11,
+        "location_link_padding_x": 1.6,
+        "location_link_padding_y": 0.6
       }
     }
   },
   "order": [
+    "1657063113094b6368",
     "165637056753e6faef",
     "16563706434dbbb576",
     "1656371504387448a8",
-    "16563740202a777685"
+    "16563740202a777685",
+    "165705202453619c53"
   ]
 }

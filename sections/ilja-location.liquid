@@ -1,0 +1,543 @@
+{{ 'ilja-location.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .location {
+    background-color: {{section.settings.location_bg_color}};
+    padding-top: {{section.settings.location_padding_sm}}rem;
+    padding-bottom: {{section.settings.location_padding_sm}}rem;
+    margin-top: {{section.settings.location_margin_sm}}rem;
+    margin-bottom: {{section.settings.location_margin_sm}}rem;
+  }
+
+  .location__title {
+    font-size: {{section.settings.location_title_font_size_sm}}rem;
+    margin-bottom: {{section.settings.location_title_margin_sm}}rem;
+    color: {{section.settings.location_title_color}};
+    
+    {% if section.settings.location_title_bold %} 
+    font-weight: 600;
+    {% endif %}
+  }
+
+  .location__text {
+    color: {{section.settings.location_text_color}};
+    margin-bottom: {{section.settings.location_text_margin_sm}}rem;
+    font-size: {{section.settings.location_text_font_size_sm}}rem;
+
+    {% if section.settings.location_text_bold %} 
+    font-weight: 600;
+    {% endif %}
+  }
+
+  .location__link {
+    color: {{section.settings.location_link_color}};
+    background-color: {{section.settings.location_link_bg_color}};
+    padding-top: {{section.settings.location_link_padding_y}}rem;
+    padding-bottom: {{section.settings.location_link_padding_y}}rem;
+    padding-right: {{section.settings.location_link_padding_x}}rem;
+    padding-left: {{section.settings.location_link_padding_x}}rem;
+    font-size: {{section.settings.location_link_font_size_sm}}rem;
+
+    {% if section.settings.location_link_bold %} 
+    font-weight: 600;
+    {% endif %}
+  }
+
+  .location__link:hover,
+  .location__link:focus {
+    background-color: {{section.settings.location_link_bg_hover}};
+    color: {{section.settings.location_link_color_hover}};
+  }
+
+  .location__bg {
+    opacity: {{section.settings.location_bg_opacity}};
+  }
+
+  /* Media Queries Should only Pertain to Sizing */
+  @media only screen and (min-width: 380px) {
+    .location {
+      padding-top: {{section.settings.location_padding_md}}rem;
+      padding-bottom: {{section.settings.location_padding_md}}rem;
+      margin-top: {{section.settings.location_margin_md}}rem;
+      margin-bottom: {{section.settings.location_margin_md}}rem;
+    }
+
+    .location__title {
+      font-size: {{section.settings.location_title_font_size_md}}rem;
+      margin-bottom: {{section.settings.location_title_margin_md}}rem;
+    }
+
+    .location__text {
+      font-size: {{section.settings.location_text_font_size_md}}rem;
+      margin-bottom: {{section.settings.location_text_margin_md}}rem;
+
+    }
+    .location__link {
+      {{section.settings.location_link_font_size_md}}rem;
+    }
+
+  }
+
+  @media only screen and (min-width: 768px) {
+    .location {
+      padding-top: {{section.settings.location_padding_lg}}rem;
+      padding-bottom: {{section.settings.location_padding_lg}}rem;
+      margin-top: {{section.settings.location_margin_lg}}rem;
+      margin-bottom: {{section.settings.location_margin_lg}}rem;
+    }
+
+    .location__title {
+      font-size: {{section.settings.location_title_font_size_lg}}rem;
+      margin-bottom: {{section.settings.location_title_margin_lg}}rem;
+
+    }
+
+    .location__text {
+      font-size: {{section.settings.location_text_font_size_lg}}rem;
+      margin-bottom: {{section.settings.location_text_margin_lg}}rem;
+    }
+
+    .location__link {
+      {{section.settings.location_link_font_size_lg}}rem;
+    }
+  }
+</style>
+
+<div class="location">
+  <h1 class="location__title">{{ section.settings.location_title }}</h1>
+  <p class="location__text">{{ section.settings.location_text }}</p>
+  <a class="location__link" href="{{section.settings.location_href}}">{{ section.settings.location_link }}</a>
+  <svg class="location__bg location__bg--desktop" preserveaspectratio="xMinYMax slice" viewbox="0 0 1400 332" xmlns="http://www.w3.org/2000/svg">
+    <path class="location__bg-back" d="M1034.07 111H957.293V87H916.453V189H957.293V158H1034.07V111Z"></path>
+    <path class="location__bg-back" d="M130.868 84.1101L79.6219 77.7801V49.3301H48.4691H45.4959H0V158H49.0082L48.4691 139.79L75.1459 126H130.688L130.868 84.1101Z"></path>
+
+    <path class="location__bg-back" d="M1400 89L1388.56 82.35V42H1274.21V0H1127.19V109H1092.88V134H1065.11V188H1213.77V152V134V115H1274.21V113H1388.56V111H1400V89Z"></path>
+
+    <path class="location__bg-back" d="M228.525 92H194.399V134H228.525V92Z"></path>
+    <path class="location__bg-back" d="M401.867 77H344.691V197H401.867V77Z"></path>
+    <path class="location__bg-back" d="M774.329 103V45H671.412V78H592.999L568.495 86V103H496.616V226H779.23V103H774.329Z"></path>
+    <path class="location__bg-middle" d="M135.949 124.88L68.6114 125L47.3746 138V158L0 157.89V253.89H62.077V322.78H85.4376V165.04H135.949V157.89V131.89H184.418L184.597 125L135.949 124.88Z"></path>
+
+    <path class="location__bg-middle" d="M346.324 64H245.041V85L225.438 97V131L251.575 131.22V227H274.446V131.41L346.324 132V64Z"></path>
+    <path class="location__bg-middle" d="M1176.2 148H954.026V189H942.59V310H1140.26V203H1176.2V148Z"></path>
+    <path class="location__bg-middle" d="M1400 111H1350.99V248H1400V111Z"></path>
+    <path class="location__bg-middle" d="M514.586 194V92H392.065L382.264 97V190H364.294V281H512.952V194H514.586Z"></path>
+    <path class="location__bg-middle" d="M1308.52 51H1207.23V110H1308.52V51Z"></path>
+    <path class="location__bg-middle" d="M702.45 207V142H642.007V207V214V258H730.042V207H702.45Z"></path>
+    <path class="location__bg-front" d="M1352.63 206V104H1290.55L1252.98 83H1203.97V187H1084.71V229V305.78H1055.31V141L971.995 163V263H947.001V250.96V109H916.453V65H888.681V56H877.246V65H807.001V98H738.39L723.687 110V250.96H667.965V236.74L629.967 207.18V136.59H504.604V192.78H459.762V241.29L406.915 270.81H371.972V226.22H371.743V121.67L273.727 88V226.22H252.67V164.04V130.89H135.949V164.04H85.4376V253V321.78H62.077V253H0V332H47.4399H62.077H85.4376H109.517H147.515H252.67H1400V318V305.78V229L1352.63 206Z"></path>
+
+  </svg>
+</div>
+
+{%- comment -%}
+
+TOP LEVEL SETTINGS STRUCTURE : Use `ctrl + f` and search -> "type": "header", to navigate sections
+
+- Text
+- Link URL
+- Title Font
+- Text Font
+- Link Font
+- Title Color
+- Text Color
+- Link Color
+- Background Color
+- Background Image Opacity
+- Title Margin Bottom
+- Text Margin Bottom
+- Section Margin
+- Section Padding
+- Link Padding
+
+{%- endcomment -%}
+
+{% schema %}
+  {
+    "name": "location",
+    "presets": [
+      {
+        "name" : "Location (Ilja)"
+      }
+    ],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Text Settings"
+      },
+      {
+        "type": "text",
+        "id": "location_title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "location_text",
+        "label": "Text"
+      },
+      {
+        "type": "text",
+        "id": "location_link",
+        "label": "Link Text"
+      },
+      {
+        "type": "header",
+        "content": "Link URL"
+      },
+      {
+        "type": "text",
+        "id": "location_href",
+        "label": "Link URL"
+      },
+      {
+        "type": "header",
+        "content": "Title Font"
+      },
+      {
+        "type": "range",
+        "id": "location_title_font_size_sm",
+        "label": "Title Size at Phone Screens",
+        "min": 1,
+        "max": 8,
+        "step": 0.2,
+        "unit": "rem",
+        "default": 2.8
+      },
+      {
+        "type": "range",
+        "id": "location_title_font_size_md",
+        "label": "Title Size at Tablet Screens",
+        "min": 1,
+        "max": 8,
+        "step": 0.2,
+        "unit": "rem",
+        "default": 2.8
+      },
+      {
+        "type": "range",
+        "id": "location_title_font_size_lg",
+        "label": "Title Size at Desktop Screens",
+        "min": 1,
+        "max": 8,
+        "step": 0.2,
+        "unit": "rem",
+        "default": 2.8
+      },
+      {
+        "type": "header",
+        "content": "Text Font"
+      },
+      {
+        "type": "range",
+        "id": "location_text_font_size_sm",
+        "label": "Text Size at Phone Screens",
+        "min": 1,
+        "max": 3,
+        "step": 0.2,
+        "unit": "rem",
+        "default": 1.8
+      },
+      {
+        "type": "range",
+        "id": "location_text_font_size_md",
+        "label": "Text Size at Tablet Screens",
+        "min": 1,
+        "max": 3,
+        "step": 0.2,
+        "unit": "rem",
+        "default": 1.8
+      },
+      {
+        "type": "range",
+        "id": "location_text_font_size_lg",
+        "label": "Text Size at Desktop Screens",
+        "min": 1,
+        "max": 3,
+        "step": 0.2,
+        "unit": "rem",
+        "default": 1.8
+      },
+      {
+        "type": "header",
+        "content": "Link Font"
+      },
+      {
+        "type": "range",
+        "id": "location_link_font_size_sm",
+        "label": "Link Size at Phone Screens",
+        "min": 1,
+        "max": 3,
+        "step": 0.2,
+        "unit": "rem",
+        "default": 1.6
+      },
+      {
+        "type": "range",
+        "id": "location_link_font_size_md",
+        "label": "Link Size at Tablet Screens",
+        "min": 1,
+        "max": 3,
+        "step": 0.2,
+        "unit": "rem",
+        "default": 1.6
+      },
+      {
+        "type": "range",
+        "id": "location_link_font_size_lg",
+        "label": "Link Size at Desktop Screens",
+        "min": 1,
+        "max": 3,
+        "step": 0.2,
+        "unit": "rem",
+        "default": 1.6
+      },
+      {
+        "type": "header",
+        "content": "Title Color"
+      },
+      {
+        "type": "color",
+        "id": "location_title_color",
+        "label": "Title Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "checkbox",
+        "id": "location_title_bold",
+        "label": "Bold Title?"
+      },
+      {
+        "type": "header",
+        "content": "Text Color"
+      },
+      {
+        "type": "color",
+        "id": "location_text_color",
+        "label": "Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "checkbox",
+        "id": "location_text_bold",
+        "label": "Bold Text?"
+      },
+      {
+        "type": "header",
+        "content": "Link Color"
+      },
+      {
+        "type": "color",
+        "id": "location_link_color",
+        "label": "Link Color",
+        "default": "#232323"
+      },
+      {
+        "type": "color",
+        "id": "location_link_color_hover",
+        "label": "Link Color on Hover",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "location_link_bg_color",
+        "label": "Link Background Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "location_link_bg_hover",
+        "label": "Link Background Color on Hover",
+        "default": "#576d7d"
+      },
+      {
+        "type": "checkbox",
+        "id": "location_link_bold",
+        "label": "Bold Link?"
+      },
+      {
+        "type": "header",
+        "content": "Background Color"
+      },
+      {
+        "type": "color",
+        "id": "location_bg_color",
+        "label": "Background Color"
+      },
+      {
+        "type": "header",
+        "content": "Background Image Opacity"
+      },
+      {
+        "type": "range",
+        "id": "location_bg_opacity",
+        "min": 0,
+        "max": 1,
+        "step": 0.1,
+        "label": "Background Image Opacity",
+        "default": 0.2
+      },
+      {
+        "type": "header",
+        "content": "Title Margin Bottom"
+      },
+      {
+        "type": "range",
+        "id": "location_title_margin_sm",
+        "min": 0,
+        "max": 5,
+        "step": 0.1,
+        "label": "Margin Bottom at Phone Screens",
+        "unit": "rem",
+        "default": 0.5
+      },
+      {
+        "type": "range",
+        "id": "location_title_margin_md",
+        "min": 0,
+        "max": 5,
+        "step": 0.1,
+        "label": "Margin Bottom at Tablet Screens",
+        "unit": "rem",
+        "default": 0.5
+      },
+      {
+        "type": "range",
+        "id": "location_title_margin_lg",
+        "min": 0,
+        "max": 5,
+        "step": 0.1,
+        "label": "Margin Bottom at Desktop Screens",
+        "unit": "rem",
+        "default": 0.5
+      },
+      {
+        "type": "header",
+        "content": "Text Margin Bottom"
+      },
+      {
+        "type": "range",
+        "id": "location_text_margin_sm",
+        "min": 0,
+        "max": 5,
+        "step": 0.1,
+        "label": "Margin Bottom at Phone Screens",
+        "unit": "rem",
+        "default": 0.5
+      },
+      {
+        "type": "range",
+        "id": "location_text_margin_md",
+        "min": 0,
+        "max": 5,
+        "step": 0.1,
+        "label": "Margin Bottom at Tablet Screens",
+        "unit": "rem",
+        "default": 0.5
+      },
+      {
+        "type": "range",
+        "id": "location_text_margin_lg",
+        "min": 0,
+        "max": 5,
+        "step": 0.1,
+        "label": "Margin Bottom at Desktop Screens",
+        "unit": "rem",
+        "default": 0.5
+      },
+      {
+        "type": "header",
+        "content": "Section Margin",
+        "info": "Controls both top and bottom margins"
+      },
+      {
+        "type": "range",
+        "id": "location_margin_sm",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "label": "Margin at Phone Screens",
+        "unit": "rem",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "location_margin_md",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "label": "Margin at Tablet Screens",
+        "unit": "rem",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "location_margin_lg",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "label": "Margin at Desktop Screens",
+        "unit": "rem",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Section Padding",
+        "info": "Controls both top and bottom paddings"
+      },
+      {
+        "type": "range",
+        "id": "location_padding_sm",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "label": "Padding at Phone Screens",
+        "unit": "rem",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "location_padding_md",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "label": "Padding at Tablet Screens",
+        "unit": "rem",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "location_padding_lg",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "label": "Padding at Desktop Screens",
+        "unit": "rem",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Link Padding"
+      },
+      {
+        "type": "range",
+        "id": "location_link_padding_x",
+        "min": 0,
+        "max": 3,
+        "step": 0.2,
+        "label": "Horizontal Padding",
+        "unit": "rem",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "location_link_padding_y",
+        "min": 0,
+        "max": 3,
+        "step": 0.2,
+        "label": "Vertical Padding",
+        "unit": "rem",
+        "default": 0
+      }
+    ]
+  }
+{% endschema %}
+

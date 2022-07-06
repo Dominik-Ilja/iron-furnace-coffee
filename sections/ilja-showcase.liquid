@@ -1,0 +1,301 @@
+{{ 'ilja-showcase.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .showcase {
+    max-width: {{section.settings.showcase_width}}px;
+    border-top: 3px solid {{section.settings.showcase_border_color}};
+    border-bottom: 3px solid {{section.settings.showcase_border_color}};
+    margin-top: {{section.settings.showcase_margin_sm}}rem;
+    margin-bottom: {{section.settings.showcase_margin_sm}}rem;
+    padding-top: {{section.settings.showcase_padding_sm}}rem;
+    padding-bottom: {{section.settings.showcase_padding_sm}}rem;
+  }
+
+  .showcase__image {
+    right: {{section.settings.showcase_image_sm}}rem;
+    max-height: none;
+  }
+
+  .showcase__text {
+    line-height: {{section.settings.showcase_line_height}};
+    font-size: {{section.settings.showcase_text_font_size_sm}}rem;
+    color: {{section.settings.showcase_text_color}};
+    max-width: {{section.settings.showcase_text_width}}%;
+    font-weight: 300;
+
+    {% if section.settings.showcase_text_bold %} 
+    font-weight: 600;
+    {% endif %}
+  }
+
+  @media only screen and (min-width: 380px) {
+    .showcase {
+      margin-top: {{section.settings.showcase_margin_md}}rem;
+      margin-bottom: {{section.settings.showcase_margin_md}}rem;
+      padding-top: {{section.settings.showcase_padding_md}}rem;
+      padding-bottom: {{section.settings.showcase_padding_md}}rem;
+    }
+
+    .showcase__image {
+      right: {{section.settings.showcase_image_md}}rem;
+      max-height: none;
+    }
+
+    .showcase__text {
+      font-size: {{section.settings.showcase_text_font_size_md}}rem;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .showcase {
+      margin-top: {{section.settings.showcase_margin_lg}}rem;
+      margin-bottom: {{section.settings.showcase_margin_lg}}rem;
+      padding-top: {{section.settings.showcase_padding_lg}}rem;
+      padding-bottom: {{section.settings.showcase_padding_lg}}rem;
+    }
+
+    .showcase__text {
+      font-size: {{section.settings.showcase_text_font_size_lg}}rem;
+    }
+  }
+
+  @media only screen and (min-width: 828px) {
+    .showcase__image {
+      right: {{section.settings.showcase_image_lg}}rem;
+      max-height: none;
+    }
+  }
+</style>
+
+<div class="showcase">
+  <p class="showcase__text">{{section.settings.showcase_text}}</p>
+  <img class="showcase__image" src="{{"ilja-showcase-image.png" | asset_url}}" alt="">
+</div>
+
+{%- comment -%}
+
+TOP LEVEL SETTINGS STRUCTURE : Use `ctrl + f` and search -> "type": "header", to navigate sections
+
+- Width
+- Image Placement
+- Text
+- Text Color
+- Section Border Color
+- Section Margin
+- Section Padding
+
+{%- endcomment -%}
+
+{% schema %}
+  {
+    "name": "showcase",
+    "presets": [
+      {
+        "name" : "Showcase (Ilja)"
+      }
+    ],
+    "settings": [
+      {
+        "type": "header",
+        "content": "Section Width"
+      },
+      {
+        "type": "range",
+        "id": "showcase_width",
+        "min": 600,
+        "max": 768,
+        "step": 6,
+        "unit": "px",
+        "label": "Showcase Max Width",
+        "default": 768
+      },
+      {
+        "type": "header",
+        "content": "Background Image Position"
+      },
+      {
+        "type": "range",
+        "id": "showcase_image_sm",
+        "min": -40,
+        "max": 40,
+        "step": 1,
+        "unit": "rem",
+        "label": "Position",
+        "default": -18
+      },
+      {
+        "type": "range",
+        "id": "showcase_image_md",
+        "min": -40,
+        "max": 40,
+        "step": 1,
+        "unit": "rem",
+        "label": "Position",
+        "default": -18
+      },
+      {
+        "type": "range",
+        "id": "showcase_image_lg",
+        "min": -40,
+        "max": 40,
+        "step": 1,
+        "unit": "rem",
+        "label": "Position",
+        "default": -18
+      },
+      {
+        "type": "header",
+        "content": "Text Settings"
+      },
+      {
+        "type": "textarea",
+        "id": "showcase_text",
+        "label": "Text"
+      },
+      {
+        "type": "range",
+        "id": "showcase_line_height",
+        "min": 1.2,
+        "max": 2,
+        "step": 0.1,
+        "label": "Line Height",
+        "default": 1.8
+      },
+      {
+        "type": "range",
+        "id": "showcase_text_width",
+        "min": 75,
+        "max": 100,
+        "step": 1,
+        "label": "Text Width",
+        "unit": "%",
+        "default": 86
+      },
+      {
+        "type": "range",
+        "id": "showcase_text_font_size_sm",
+        "label": "Text Size at Phone Screens",
+        "min": 1,
+        "max": 3,
+        "step": 0.2,
+        "unit": "rem",
+        "default": 1.8
+      },
+      {
+        "type": "range",
+        "id": "showcase_text_font_size_md",
+        "label": "Text Size at Tablet Screens",
+        "min": 1,
+        "max": 3,
+        "step": 0.2,
+        "unit": "rem",
+        "default": 1.8
+      },
+      {
+        "type": "range",
+        "id": "showcase_text_font_size_lg",
+        "label": "Text Size at Desktop Screens",
+        "min": 1,
+        "max": 3,
+        "step": 0.2,
+        "unit": "rem",
+        "default": 1.8
+      },
+      {
+        "type": "header",
+        "content": "Text Color"
+      },
+      {
+        "type": "color",
+        "id": "showcase_text_color",
+        "label": "Text Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "checkbox",
+        "id": "showcase_text_bold",
+        "label": "Bold Text?"
+      },
+      {
+        "type": "header",
+        "content": "Section Border Color"
+      },
+      {
+        "type": "color",
+        "id": "showcase_border_color",
+        "label": "Border Color",
+        "default": "#C2C2C2"
+      },
+      {
+        "type": "header",
+        "content": "Section Margin",
+        "info": "Controls both top and bottom margins"
+      },
+      {
+        "type": "range",
+        "id": "showcase_margin_sm",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "label": "Margin at Phone Screens",
+        "unit": "rem",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "showcase_margin_md",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "label": "Margin at Tablet Screens",
+        "unit": "rem",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "showcase_margin_lg",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "label": "Margin at Desktop Screens",
+        "unit": "rem",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Section Padding",
+        "info": "Controls both top and bottom paddings"
+      },
+      {
+        "type": "range",
+        "id": "showcase_padding_sm",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "label": "Padding at Phone Screens",
+        "unit": "rem",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "showcase_padding_md",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "label": "Padding at Tablet Screens",
+        "unit": "rem",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "showcase_padding_lg",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "label": "Padding at Desktop Screens",
+        "unit": "rem",
+        "default": 0
+      }
+    ]
+  }
+{% endschema %}

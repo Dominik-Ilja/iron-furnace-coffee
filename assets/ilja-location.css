@@ -16,6 +16,7 @@
 
 .location__title,
 .location__text {
+  margin-top: 0;
   text-align: center;
 }
 
