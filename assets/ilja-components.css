@@ -4,3 +4,9 @@
 .social-icon:hover {
   transform: scale(1.07);
 }
+.unstyle-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}

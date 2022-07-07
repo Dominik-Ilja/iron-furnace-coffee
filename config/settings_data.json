@@ -252,6 +252,74 @@
           "row_gap_top_mobile": 3,
           "row_gap_top_tablet": 3
         }
+      },
+      "ilja-footer-2": {
+        "type": "ilja-footer-2",
+        "blocks": {
+          "af23b294-37b1-4b10-a512-c91466475615": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/logo-black.png"
+            }
+          },
+          "c211ddda-1b5e-4125-b763-346392c57eb0": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick links",
+              "menu": "footer"
+            }
+          },
+          "5b77d2a6-f1a5-46d7-b601-7a2c147b4dbe": {
+            "type": "list",
+            "settings": {
+              "heading": "Contact",
+              "list_item_1": "info@ironfurnacecoffee.com",
+              "list_item_2": "(814) 518-5151",
+              "list_item_3": ""
+            }
+          },
+          "5e3080a7-cc7a-405b-81f9-08a5fb2ee229": {
+            "type": "list",
+            "settings": {
+              "heading": "Location",
+              "list_item_1": "1236 Liberty St",
+              "list_item_2": "Franklin, PA 16323",
+              "list_item_3": ""
+            }
+          }
+        },
+        "block_order": [
+          "af23b294-37b1-4b10-a512-c91466475615",
+          "c211ddda-1b5e-4125-b763-346392c57eb0",
+          "5b77d2a6-f1a5-46d7-b601-7a2c147b4dbe",
+          "5e3080a7-cc7a-405b-81f9-08a5fb2ee229"
+        ],
+        "settings": {
+          "copyright_bold": false,
+          "block_title_bold": true,
+          "block_item_color": "#7e7e7e",
+          "block_link_color": "#587d71",
+          "block_title_color": "#7d6757",
+          "path_1_color": "#a2573a",
+          "path_2_color": "#935036",
+          "path_3_color": "#854932",
+          "path_4_color": "#77422e",
+          "path_5_color": "#693b2a",
+          "block_title_font_size": 2.4,
+          "block_col_gap": 4,
+          "block_item_gap": 0.8,
+          "block_row_gap": 4,
+          "bottom_row_gap": 3.5,
+          "section_gap": 6.5,
+          "social_gap": 1.6,
+          "path_opacity": 0.2,
+          "block_title_margin": 1.6,
+          "section_padding_y": 6,
+          "social_show": true,
+          "copyright_show": true,
+          "image_width_desktop": 140,
+          "image_width_mobile": 140
+        }
       }
     },
     "content_for_index": [
