@@ -5,7 +5,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   position: relative;
-  z-index: 10;
+  z-index: 1;
 }
 .showcase__text {
   line-height: 1.8;

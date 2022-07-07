@@ -270,6 +270,24 @@ html.no-js .no-js-hidden {
     margin-top: calc(5rem + var(--page-width-margin));
   }
 }
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.header,
+.header-wrapper {
+  z-index: 1000;
+}
+
+.header__bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 body,
 .color-background-1,
 .color-background-2,
@@ -278,7 +296,6 @@ body,
 .color-accent-2 {
   color: rgba(var(--color-foreground), 0.75);
   background-color: rgb(var(--color-background));
-  overflow-x: hidden;
 }
 
 .background-secondary {
@@ -2188,9 +2205,11 @@ input[type="checkbox"] {
 
 .header {
   display: grid;
-  grid-template-areas: "left-icon heading icons";
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "heading left-icon icons";
+  /* grid-template-columns: 1fr 2fr 1fr; */
+  grid-template-columns: 2fr auto auto;
   align-items: center;
+  background-color: transparent;
 }
 
 @media screen and (min-width: 990px) {
@@ -2201,7 +2220,8 @@ input[type="checkbox"] {
   }
   .header--middle-left {
     grid-template-areas: "heading navigation icons";
-    grid-template-columns: auto auto 1fr;
+    /* grid-template-columns: auto auto 1fr; */
+    grid-template-columns: auto 1fr auto;
     column-gap: 2rem;
   }
   .header--top-center {
@@ -2227,7 +2247,8 @@ input[type="checkbox"] {
 .header__heading,
 .header__heading-link {
   grid-area: heading;
-  justify-self: center;
+  /* justify-self: center; */
+  justify-self: start;
 }
 
 .header__heading-link {
@@ -2505,6 +2526,7 @@ details[open] > .header__submenu {
 .header__inline-menu {
   margin-left: -1.2rem;
   grid-area: navigation;
+  justify-self: end;
   display: none;
 }
 
