@@ -4,8 +4,8 @@
       "type": "ilja-showcase",
       "settings": {
         "showcase_width": 768,
-        "showcase_image_sm": -18,
-        "showcase_image_md": -18,
+        "showcase_image_sm": -12,
+        "showcase_image_md": -13,
         "showcase_image_lg": -25,
         "showcase_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl.",
         "showcase_line_height": 1.8,
@@ -16,11 +16,11 @@
         "showcase_text_color": "#343434",
         "showcase_text_bold": false,
         "showcase_border_color": "#c2c2c2",
-        "showcase_margin_sm": 0,
-        "showcase_margin_md": 0,
+        "showcase_margin_sm": 8,
+        "showcase_margin_md": 8,
         "showcase_margin_lg": 10,
-        "showcase_padding_sm": 0,
-        "showcase_padding_md": 0,
+        "showcase_padding_sm": 4,
+        "showcase_padding_md": 5,
         "showcase_padding_lg": 5
       }
     },
@@ -205,7 +205,7 @@
         "title": "Menu",
         "name_font_size": 1.8,
         "price_font_size": 1.4,
-        "text_line_height": 1,
+        "text_line_height": 1.5,
         "name_font_bold": true,
         "price_font_bold": false
       }
@@ -226,72 +226,6 @@
       ],
       "settings": {
         "include_margins": true
-      }
-    },
-    "16563740202a777685": {
-      "type": "ilja-footer",
-      "disabled": true,
-      "blocks": {
-        "ef4ef962-c409-4123-8c4e-824ad536ef31": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/logo-black.png",
-            "image_width": 160,
-            "image_width_mobile": 100,
-            "alignment": "center"
-          }
-        },
-        "16252bad-b5f1-4fc4-b817-8a7418dc908c": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Products",
-            "menu": "footer"
-          }
-        },
-        "2198c889-c0cd-4a9a-8979-61452949b630": {
-          "type": "list",
-          "settings": {
-            "heading": "Contact",
-            "list_item_1": "info@ironfurnacecoffee.com",
-            "list_item_2": "(814) 518-5151",
-            "list_item_3": ""
-          }
-        },
-        "58025b61-7802-4851-81ab-70cc604a761a": {
-          "type": "list",
-          "settings": {
-            "heading": "Location",
-            "list_item_1": "1236 Liberty St",
-            "list_item_2": "Franklin, PA 16323",
-            "list_item_3": ""
-          }
-        }
-      },
-      "block_order": [
-        "ef4ef962-c409-4123-8c4e-824ad536ef31",
-        "16252bad-b5f1-4fc4-b817-8a7418dc908c",
-        "2198c889-c0cd-4a9a-8979-61452949b630",
-        "58025b61-7802-4851-81ab-70cc604a761a"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "background_color": "",
-        "background_gradient": "",
-        "show_copyright": true,
-        "show_social": true,
-        "social_size": 32,
-        "bold_headers": false,
-        "headers_color": "",
-        "text_color": "",
-        "link_color": "",
-        "link_color_hover": "",
-        "margin_top": 0,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "row_gap_container_mobile": 6,
-        "row_gap_container_tablet": 6,
-        "row_gap_top_mobile": 6,
-        "row_gap_top_tablet": 6
       }
     },
     "165705202453619c53": {
@@ -336,6 +270,117 @@
         "location_link_padding_x": 1.6,
         "location_link_padding_y": 0.6
       }
+    },
+    "165707111868995eaa": {
+      "type": "ilja-reviews",
+      "blocks": {
+        "acdf01fe-37be-4ee7-bb2e-382167d8d3e9": {
+          "type": "review",
+          "settings": {
+            "review_rating": 5,
+            "review_text": "The staff is amazing and they have great drinks and pastries. I love coming in before work and just relaxing for a little bit. It's a great environment to hang out for a while and read or just to relax. It's definitely one of my\nfavorite places in Franklin now.",
+            "review_signature": "- Amanda Keating"
+          }
+        },
+        "5c206a3a-09d8-47c7-8e48-8310f3359443": {
+          "type": "review",
+          "settings": {
+            "review_rating": 5,
+            "review_text": "REAL tea & REAL food. Simple, clean, and delicious, got their avocado toast and the Wild Thai green tea which was even better! Nice to have real tea in the area. This place is a a hidden green gem with a great atmosphere in this small town. Worth visiting after exploring the trails, work break or just visiting the area! Thank you and keep up the great work!💚✨",
+            "review_signature": "- Sarah Boston"
+          }
+        },
+        "14de7516-9aeb-40c6-82cd-2ae9c417bcd4": {
+          "type": "review",
+          "settings": {
+            "review_rating": 5,
+            "review_text": "So excited about this new coffee shop!!! The coffee itself is high quality and delicious, and they roast it right in the shop. You can tell they know what they’re doing when it comes to good coffee. And the vibe is amazing! So bright and comfortable.",
+            "review_signature": "- Ashley Sheffer"
+          }
+        }
+      },
+      "block_order": [
+        "acdf01fe-37be-4ee7-bb2e-382167d8d3e9",
+        "5c206a3a-09d8-47c7-8e48-8310f3359443",
+        "14de7516-9aeb-40c6-82cd-2ae9c417bcd4"
+      ],
+      "settings": {
+        "reivew_bold": false,
+        "title_bold": false,
+        "review_border_radius": 1.2,
+        "star_color": "#f4ff74",
+        "background_color": "#7d6757",
+        "border_color": "#373737",
+        "text_color": "#ffffff",
+        "title_color": "#343434",
+        "signature_color": "#ffffff",
+        "review_font_size": 1.6,
+        "signature_font_size": 1.6,
+        "title_font_size": 4,
+        "reviews_gap": 3,
+        "review_gap": 3,
+        "review_line_height": 1.8,
+        "rating_margin": 1.6,
+        "reviews_margin": 10,
+        "title_margin": 5,
+        "review_padding_x": 1.5,
+        "review_padding_y": 2.5,
+        "section_title": "Reviews",
+        "border_width": 10
+      }
+    },
+    "1657142834197ea88f": {
+      "type": "ilja-featured-products",
+      "blocks": {
+        "7fca82ba-6f28-43f4-9015-0aebda616594": {
+          "type": "product",
+          "settings": {
+            "product": "oasis-blend"
+          }
+        },
+        "dfe421f0-954e-4d1d-8c34-3d1e6f47ae81": {
+          "type": "product",
+          "settings": {
+            "product": "long-sleeve-shirt"
+          }
+        },
+        "817952de-d356-4971-803b-19694a881a08": {
+          "type": "product",
+          "settings": {
+            "product": "short-sleeve-shirt"
+          }
+        }
+      },
+      "block_order": [
+        "7fca82ba-6f28-43f4-9015-0aebda616594",
+        "dfe421f0-954e-4d1d-8c34-3d1e6f47ae81",
+        "817952de-d356-4971-803b-19694a881a08"
+      ],
+      "settings": {
+        "name_bold": true,
+        "price_bold": true,
+        "title_bold": false,
+        "product_border_radius": 0.4,
+        "background_color": "rgba(0,0,0,0)",
+        "background_color_hover": "rgba(0,0,0,0)",
+        "border_color": "rgba(0,0,0,0)",
+        "border_color_hover": "#343434",
+        "name_color": "#343434",
+        "price_color": "#343434",
+        "title_color": "#343434",
+        "name_font_size": 1.8,
+        "price_font_size": 1.4,
+        "title_font_size": 4,
+        "products_gap": 3,
+        "image_margin": 1.6,
+        "name_margin": 0.2,
+        "products_margin": 10,
+        "title_margin": 3,
+        "card_padding_x": 2,
+        "card_padding_y": 2,
+        "section_title": "Featured",
+        "border_width": 4
+      }
     }
   },
   "order": [
@@ -343,7 +388,8 @@
     "165637056753e6faef",
     "16563706434dbbb576",
     "1656371504387448a8",
-    "16563740202a777685",
-    "165705202453619c53"
+    "165705202453619c53",
+    "165707111868995eaa",
+    "1657142834197ea88f"
   ]
 }

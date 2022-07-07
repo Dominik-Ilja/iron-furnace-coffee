@@ -1,0 +1,416 @@
+{{ 'ilja-reviews.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .reviews {
+    margin-top: {{section.settings.reviews_margin}}rem;
+    margin-bottom: {{section.settings.reviews_margin}}rem;
+  }
+
+  .reviews__inner {
+    gap: {{section.settings.reviews_gap}}rem;
+  }
+
+  .reviews__title {
+    color: {{section.settings.title_color}};
+    font-size: {{section.settings.title_font_size}}rem;
+    margin-bottom: {{section.settings.title_margin}}rem;
+
+    {% if section.settings.title_bold %} 
+      font-weight: 600;
+    {% endif %}
+  }
+
+  .review {
+    border-style: solid;
+    border-width: {{section.settings.border_width}}px
+    border-color: {{section.settings.border_color}};
+    border-radius: {{section.settings.review_border_radius}}rem;
+    padding: {{section.settings.review_padding_y}}rem {{section.settings.review_padding_x}}rem;
+    background-color: {{section.settings.background_color}};
+    color: {{section.settings.text_color}};
+    font-size: {{section.settings.review_font_size}}rem;
+    line-height: {{section.settings.review_line_height}};
+    row-gap: {{section.settings.review_gap}}rem;
+
+    font-weight: 500;
+    {% if section.settings.location_title_bold %} 
+    font-weight: 600;
+    {% endif %}
+  }
+
+  .review__rating {
+    margin-bottom: {{section.settings.rating_margin}}rem;
+  }
+
+  .review__path {
+    fill: {{section.settings.star_color}};
+  }
+
+  .review__signature {
+    color: {{section.settings.signature_color}};
+    font-size: {{section.settings.signature_font_size}}rem;
+  }
+
+  /* Media Queries Should only Pertain to Sizing */
+  @media only screen and (min-width: 380px) {
+
+        {% comment %} .review {
+          width: 284px;
+          min-height: 400px;
+          font-size: 1rem;
+          line-height: 1.4;
+          row-gap: 2rem;
+        }
+
+        .review__rating {
+          margin-bottom: 1.25rem;
+        }
+
+        .review__signature {
+          font-size: inherit;
+        } {% endcomment %}
+  }
+
+  @media only screen and (min-width: 768px) {
+    {% comment %} 
+        .review {
+          width: 284px;
+          min-height: 400px;
+          font-size: 1rem;
+          line-height: 1.4;
+          row-gap: 2rem;
+        }
+
+        .review__rating {
+          margin-bottom: 1.25rem;
+        }
+
+        .review__signature {
+          font-size: inherit;
+        } {% endcomment %}
+  }
+</style>
+
+<div class="reviews page-width">
+  {% if section.settings.section_title != blank %}
+    <h1 class="reviews__title">{{section.settings.section_title}}</h1>
+  {% endif %}
+ <div class="reviews__inner">
+   {%- for block in section.blocks -%}
+     <div class="review">
+      <div class="review__top">
+        <div class="review__rating">
+        {% comment %}
+          The Below block of code creates the stars for the rating. We raise the user's range to allow for us to use the value in looping. If we're on the last element we compare the number with the range. If the range is greater that means the user selected a half star.
+        {% endcomment %}
+        {%- assign num = block.settings.review_rating -%}
+        {%- assign range = num | ceil -%}
+        {%- for i in (1..range) -%}
+          {% if forloop.last and num < range %}
+            <svg class="review__star review__star--half" width="10" height="19" viewBox="0 0 10 19"
+                  xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_322_128)">
+                <path class="review__path" d="M7.26 6.91H0L5.88 11.18L3.63 18.09L9.51 13.82V0L7.26 6.91Z" />
+              </g>
+              <defs>
+                <clipPath id="clip0_322_128">
+                  <rect width="9.51" height="18.09" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          {% else %}
+            <svg class="review__star" width="20" height="19" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg">
+              <path class="review__path"
+                d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" />
+            </svg>
+          {% endif %}
+        {%- endfor -%}
+        </div>
+        <p class="review__content">{{block.settings.review_text}}</p>
+      </div>
+      <div class="review__signature">{{block.settings.review_signature}}</div>
+    </div>
+   {%- endfor -%}
+ </div>
+</div>
+
+{%- comment -%}
+TOP LEVEL SETTINGS STRUCTURE : Use 'ctrl + f' and search -> "type": "header", to navigate sections
+  - Bold 
+  - Border Radius 
+  - Colors 
+  - Font Sizing 
+  - Gap Spacing
+  - Line Heights
+  - Margin
+  - Padding
+  - Widths
+
+
+{%- endcomment -%}
+
+{% schema %}
+{
+  "name": "reviews",
+  "presets": [
+    {
+      "name": "Reviews (Ilja)"
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Bold"
+    },
+    {
+      "type": "checkbox",
+      "id": "reivew_bold",
+      "label": "Bold Review Text?",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "title_bold",
+      "label": "Bold section title?",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Border Radius"
+    },
+    {
+      "type": "range",
+      "id": "review_border_radius",
+      "min": 0,
+      "max": 3,
+      "step": 0.2,
+      "unit": "rem",
+      "default": 1.2,
+      "label": "Review border radius"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Color of Stars",
+      "default": "#eaff00"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Color of Background",
+      "default": "#7d6757"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Color of Card Border",
+      "default": "#373737"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color of Text",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color of section title",
+      "default": "#343434"
+    },
+    {
+      "type": "color",
+      "id": "signature_color",
+      "label": "Color of Signature",
+      "default": "#fff"
+    },
+    {
+      "type": "header",
+      "content": "Font Sizing"
+    },
+    {
+      "type": "range",
+      "id": "review_font_size",
+      "min": 1,
+      "max": 3,
+      "step": 0.2,
+      "unit": "rem",
+      "label": "Font Size for Review",
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "signature_font_size",
+      "min": 1,
+      "max": 3,
+      "step": 0.2,
+      "unit": "rem",
+      "label": "Font Size for Signature",
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 2,
+      "max": 10,
+      "step": 0.2,
+      "unit": "rem",
+      "label": "Font size for title",
+      "default": 4.8
+    },
+    {
+      "type": "header",
+      "content": "Gap Spacing"
+    },
+    {
+      "type": "range",
+      "id": "reviews_gap",
+      "min": 0.5,
+      "max": 8,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 3,
+      "label": "Gap between reviews"
+    },
+    {
+      "type": "range",
+      "id": "review_gap",
+      "min": 0.6,
+      "max": 8,
+      "step": 0.2,
+      "unit": "rem",
+      "default": 3.2,
+      "label": "Gap between top of review and signature"
+    },
+    {
+      "type": "header",
+      "content": "Line Heights"
+    },
+    {
+      "type": "range",
+      "id": "review_line_height",
+      "min": 1,
+      "max": 3,
+      "step": 0.2,
+      "unit": "rem",
+      "label": "Review Line Height",
+      "default": 1.4
+    },
+    {
+      "type": "header",
+      "content": "Margin"
+    },
+    {
+      "type": "range",
+      "id": "rating_margin",
+      "min": 0.2,
+      "max": 5,
+      "step": 0.2,
+      "unit": "rem",
+      "label": "Margin Bottom for Rating",
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "reviews_margin",
+      "min": 5,
+      "max": 20,
+      "step": 1,
+      "unit": "rem",
+      "label": "Vertical Margin for Reviews Section",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "title_margin",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "rem",
+      "label": "Margin bottom for section title",
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "review_padding_x",
+      "min": 1,
+      "max": 8,
+      "step": 0.5,
+      "unit": "rem",
+      "label": "Horizontal Padding for Review",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "review_padding_y",
+      "min": 1,
+      "max": 8,
+      "step": 0.5,
+      "unit": "rem",
+      "label": "Vertical Padding for Review",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title"
+    },
+    {
+      "type": "header",
+      "content": "Widths"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 2,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border width",
+      "default": 10
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "range",
+          "id": "review_rating",
+          "min": 0,
+          "max": 5,
+          "step": 0.5,
+          "default": 5,
+          "label": "Rating between 0 & 5"
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review Text" 
+        },
+        {
+          "type": "text",
+          "id": "review_signature",
+          "label": "Review Signature" 
+        }
+      ]
+    }
+  ]
+  
+}
+{% endschema %}
+

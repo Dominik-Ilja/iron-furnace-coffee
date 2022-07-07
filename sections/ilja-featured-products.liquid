@@ -1,0 +1,380 @@
+{{ 'ilja-featured-products.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .featured-products {
+    margin-top: {{section.settings.products_margin}}rem;
+    margin-bottom: {{section.settings.products_margin}}rem;
+  }
+
+  .featured__inner {
+    gap: {{section.settings.products_gap}}rem;
+  }
+
+  .featured-products__title {
+    color: {{section.settings.title_color}};
+    font-size: {{section.settings.title_font_size}}rem;
+    margin-bottom: {{section.settings.title_margin}}rem;
+
+    {% if section.settings.title_bold %} 
+      font-weight: 600;
+    {% endif %}
+  }
+
+  .featured-products .product {
+    outline: {{section.settings.border_width}}px solid {{section.settings.border_color}};
+    padding: {{section.settings.card_padding_y}}rem {{section.settings.card_padding_x}}rem;
+    border-radius: {{section.settings.product_border_radius}}rem;
+    background-color: {{section.settings.background_color}};
+  }
+
+  .featured-products .product:hover {
+    outline-color: {{section.settings.border_color_hover}};
+    background-color: {{section.settings.background_color_hover}};
+  }
+
+  .featured-products .product__image {
+    margin-bottom: {{section.settings.image_margin}}rem;
+  }
+
+  .featured-products .product__name {
+    font-size: {{section.settings.name_font_size}}rem;
+    margin-bottom: {{section.settings.name_margin}}rem;
+    color: {{section.settings.name_color}};
+
+    {% if section.settings.name_bold %}
+      font-weight: 600;
+    {% endif %}
+  }
+
+  .featured-products .product__price {
+    font-size: {{section.settings.price_font_size}}rem;
+    color: {{section.settings.price_color}};
+
+    {% if section.settings.price_bold %}
+      font-weight: 600;
+    {% endif %}
+  }
+
+  {% comment %} @media only screen and (min-width: 380px) {
+    .featured-products {
+      gap: 2rem;
+    }
+
+    .featured-products .product__image {
+      margin-bottom: 1rem;
+    }
+
+    .featured-products .product__name {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .featured-products .product__price {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .featured-products {
+      gap: 2rem;
+    }
+
+    .featured-products .product__image {
+      margin-bottom: 1rem;
+    }
+
+    .featured-products .product__name {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .featured-products .product__price {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+  } {% endcomment %}
+</style>
+
+
+<div class="featured-products page-width">
+  {% if section.settings.section_title != blank %}
+    <h1 class="featured-products__title">{{section.settings.section_title}}</h1>
+  {% endif %}
+
+  <div class="featured__inner">
+    {%- for block in section.blocks -%}
+      <a href="{{block.settings.product.url}}" class="product">
+        <div class="product__image">
+          <img src="{{block.settings.product.featured_image | img_url: 'medium'}}" alt="">
+        </div>
+        <div class="product__info">
+          <h4 class="product__name">{{block.settings.product.title}}</h4>
+          <p class="product__price">{{block.settings.product.price | money}}</p>
+        </div>
+      </a>
+    {%- endfor -%}
+  </div>
+</div>
+
+{%- comment -%}
+TOP LEVEL SETTINGS STRUCTURE : Use 'ctrl + f' and search -> "type": "header", to navigate sections
+
+  - Bold 
+  - Border Radius 
+  - Colors 
+  - Font Sizing 
+  - Gap Spacing
+  - Line Heights
+  - Margin
+  - Padding
+  - Title
+  - Widths
+
+{%- endcomment -%}
+
+{% schema %}
+  {
+    "name": "featured_products",
+    "presets": [
+      {
+        "name" : "Featured Products (Ilja)"
+      }
+    ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Bold"
+    },
+    {
+      "type": "checkbox",
+      "id": "name_bold",
+      "label": "Bold name text?",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "price_bold",
+      "label": "Bold price text?",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "title_bold",
+      "label": "Bold section title?",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Border Radius"
+    },
+    {
+      "type": "range",
+      "id": "product_border_radius",
+      "min": 0,
+      "max": 3,
+      "step": 0.2,
+      "unit": "rem",
+      "default": 1.2,
+      "label": "Product border radius"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Color of background"
+    },
+    {
+      "type": "color",
+      "id": "background_color_hover",
+      "label": "Color of background on hover"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Color of card border"
+    },
+    {
+      "type": "color",
+      "id": "border_color_hover",
+      "label": "Color of card border on hover"
+    },
+    {
+      "type": "color",
+      "id": "name_color",
+      "label": "Color of name",
+      "default": "#343434"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Color of price",
+      "default": "#343434"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color of section title",
+      "default": "#343434"
+    },
+    {
+      "type": "header",
+      "content": "Font Sizing"
+    },
+    {
+      "type": "range",
+      "id": "name_font_size",
+      "min": 1,
+      "max": 3,
+      "step": 0.2,
+      "unit": "rem",
+      "label": "Font size for product name",
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "price_font_size",
+      "min": 1,
+      "max": 3,
+      "step": 0.2,
+      "unit": "rem",
+      "label": "Font size for price",
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 2,
+      "max": 10,
+      "step": 0.2,
+      "unit": "rem",
+      "label": "Font size for title",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Gap Spacing"
+    },
+    {
+      "type": "range",
+      "id": "products_gap",
+      "min": 0.5,
+      "max": 8,
+      "step": 0.5,
+      "unit": "rem",
+      "default": 3,
+      "label": "Gap between products"
+    },
+    {
+      "type": "header",
+      "content": "Margin"
+    },
+    {
+      "type": "range",
+      "id": "image_margin",
+      "min": 0.2,
+      "max": 5,
+      "step": 0.2,
+      "unit": "rem",
+      "label": "Margin bottom for product image",
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "name_margin",
+      "min": 0.2,
+      "max": 5,
+      "step": 0.2,
+      "unit": "rem",
+      "label": "Margin bottom for product name",
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "products_margin",
+      "min": 5,
+      "max": 20,
+      "step": 1,
+      "unit": "rem",
+      "label": "Vertical margin for products section",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "title_margin",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "rem",
+      "label": "Margin bottom for section title",
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "card_padding_x",
+      "min": 1,
+      "max": 8,
+      "step": 0.5,
+      "unit": "rem",
+      "label": "Horizontal padding for card",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "card_padding_y",
+      "min": 1,
+      "max": 8,
+      "step": 0.5,
+      "unit": "rem",
+      "label": "Vertical padding for card",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title"
+    },
+    {
+      "type": "header",
+      "content": "Widths"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 2,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border width",
+      "default": 10
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ]
+
+  }
+
+{% endschema %}

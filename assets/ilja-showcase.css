@@ -11,12 +11,14 @@
   line-height: 1.8;
   font-size: 1.2rem;
   max-width: 86%;
+  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
   z-index: 10;
   position: relative;
   margin-bottom: 0;
   font-weight: 300;
+  text-align: center;
 }
 .showcase__image {
   position: absolute;
@@ -29,6 +31,7 @@
 
 @media only screen and (min-width: 380px) {
   .showcase__text {
+    text-align: left;
     line-height: 1.6;
     font-size: 1.3rem;
   }
