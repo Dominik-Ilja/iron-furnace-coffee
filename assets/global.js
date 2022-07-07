@@ -410,6 +410,9 @@ customElements.define('menu-drawer', MenuDrawer);
 class HeaderDrawer extends MenuDrawer {
   constructor() {
     super();
+
+    this.headerWrapper = document.querySelector(".header-wrapper");
+    this.headerWrapper.style.transition = "0.25s";
   }
 
   openMenuDrawer(summaryElement) {
@@ -426,11 +429,15 @@ class HeaderDrawer extends MenuDrawer {
     trapFocus(this.mainDetailsToggle, summaryElement);
     document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
     document.documentElement.style.overflowY = "hidden";
+    this.headerWrapper.style.backgroundColor = "#fff";
+    console.log(this.headerWrapper);
   }
 
   closeMenuDrawer(event, elementToFocus) {
     super.closeMenuDrawer(event, elementToFocus);
     this.header.classList.remove('menu-open');
+    this.headerWrapper.style.backgroundColor = "";
+    console.log(this.headerWrapper);
   }
 }
 
