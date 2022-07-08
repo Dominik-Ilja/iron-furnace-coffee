@@ -273,7 +273,7 @@ html.no-js .no-js-hidden {
 
 html,
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 .header,

@@ -627,7 +627,7 @@
     }
 
     connectedCallback() {
-      this.header = document.getElementById('shopify-section-header');
+      this.header = document.getElementById('shopify-section-header') || document.getElementById('shopify-section-header-no-graphic');
       this.headerBounds = {};
       this.currentScrollTop = 0;
       this.preventReveal = false;
@@ -686,7 +686,7 @@
     hide() {
       this.header.classList.add('shopify-section-header-hidden', 'shopify-section-header-sticky');
       this.closeMenuDisclosure();
-      this.closeSearchModal();
+      //this.closeSearchModal();
     }
 
     reveal() {

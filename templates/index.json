@@ -339,23 +339,16 @@
             "product": "oasis-blend"
           }
         },
-        "dfe421f0-954e-4d1d-8c34-3d1e6f47ae81": {
+        "8e92e3b0-61a3-40d5-8fb4-5ad41236ed9f": {
           "type": "product",
           "settings": {
-            "product": "long-sleeve-shirt"
-          }
-        },
-        "817952de-d356-4971-803b-19694a881a08": {
-          "type": "product",
-          "settings": {
-            "product": "short-sleeve-shirt"
+            "product": "all-day-dark-roast"
           }
         }
       },
       "block_order": [
         "7fca82ba-6f28-43f4-9015-0aebda616594",
-        "dfe421f0-954e-4d1d-8c34-3d1e6f47ae81",
-        "817952de-d356-4971-803b-19694a881a08"
+        "8e92e3b0-61a3-40d5-8fb4-5ad41236ed9f"
       ],
       "settings": {
         "name_bold": true,
