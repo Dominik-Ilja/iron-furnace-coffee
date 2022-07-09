@@ -344,11 +344,18 @@
           "settings": {
             "product": "all-day-dark-roast"
           }
+        },
+        "51c3969a-7315-4980-a9f8-37b107f2bb65": {
+          "type": "product",
+          "settings": {
+            "product": "all-day-dark-roast"
+          }
         }
       },
       "block_order": [
         "7fca82ba-6f28-43f4-9015-0aebda616594",
-        "8e92e3b0-61a3-40d5-8fb4-5ad41236ed9f"
+        "8e92e3b0-61a3-40d5-8fb4-5ad41236ed9f",
+        "51c3969a-7315-4980-a9f8-37b107f2bb65"
       ],
       "settings": {
         "name_bold": true,
